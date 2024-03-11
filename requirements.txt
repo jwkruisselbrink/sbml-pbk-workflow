@@ -1,0 +1,4 @@
+antimony>=2.13.2
+python-libsbml>=5.20.2
+sbmlutils>=0.8.7
+tellurium>=2.2.8

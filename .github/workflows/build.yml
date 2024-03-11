@@ -1,0 +1,74 @@
+on:
+    workflow_call:
+      inputs:
+        model-name:
+          required: true
+          type: string
+
+jobs:
+  create-and-annotate-sbml:
+    name: Create and annotate SBML
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch SBML PBK workflow files
+        uses: actions/checkout@v4
+        with:
+          repository: 'jwkruisselbrink/sbml-pbk-workflow'
+          path: 'sbml-pbk-workflow'
+          ref: 'main'
+  
+      - name: Install Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r sbml-pbk-workflow/requirements.txt
+        shell: bash
+
+      - name: Create log file folder
+        id: create-log-file-folder
+        run: |
+          mkdir log
+        shell: bash
+
+      - name: Create SBML
+        id: create-sbml
+        run: |
+          python sbml-pbk-workflow/src/ant2sbml.py -f model/${{inputs.model-name}}.ant
+        shell: bash
+
+      - name: Annotate SBML terms
+        id: annotate-sbml
+        run: |
+          (python sbml-pbk-workflow/src/annotate_sbml_terms.py model/${{inputs.model-name}}.sbml model/${{inputs.model-name}}.terms.csv model/${{inputs.model-name}}.sbml) | tee log/annotate-terms.log
+        shell: bash
+
+      - name: Annotate SBML units
+        id: annotate-sbml-units
+        run: |
+          (python sbml-pbk-workflow/src/annotate_sbml_units.py model/${{inputs.model-name}}.sbml model/${{inputs.model-name}}.units.csv model/${{inputs.model-name}}.sbml -f) | tee log/annotate-units.log
+        shell: bash
+
+      - name: Validate SBML
+        id: validate-sbml
+        run: (python sbml-pbk-workflow/src/validate_sbml.py model/${{inputs.model-name}}.sbml) | tee log/validate-sbml.log
+        shell: bash
+
+      - name: Archive artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: Build
+          path: |
+            model/${{inputs.model-name}}.sbml
+            *log/
+
+      - name: "Push changes"
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: Rebuild SBML and annotate model
+          file_pattern: '*.sbml'
