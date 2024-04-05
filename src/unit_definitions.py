@@ -207,6 +207,18 @@ UnitDefinitions = [
         ]
     },
     {
+        "id" : "KiloGM_PER_L",
+        "qudt" : "KiloGM-PER-L",
+        "synonyms" : [
+            "kg_per_L",
+            "kg/L",
+        ],
+        "units": [
+            { "kind": ls.UNIT_KIND_GRAM, "exponent": 1, "multiplier": 1, "scale": 3 },
+            { "kind": ls.UNIT_KIND_LITRE, "exponent": -1, "multiplier": 1, "scale": 0 }
+        ]
+    },
+    {
         "id" : "MOL_PER_L",
         "qudt" : "MOL-PER-L",
         "synonyms" : [
