@@ -8,6 +8,7 @@ UnitDefinitions = [
     {
         "id" : "UNITLESS",
         "qudt" : "UNITLESS",
+        "UCUM" : "",
         "synonyms" : [
             "unitless",
             "dimensionless"
@@ -20,6 +21,7 @@ UnitDefinitions = [
     {
         "id" : "MOL",
         "qudt" : "MOL",
+        "UCUM" : "mol",
         "synonyms" : [
             "mol"
         ],
@@ -30,6 +32,7 @@ UnitDefinitions = [
     {
         "id" : "MilliMOL",
         "qudt" : "MilliMOL",
+        "UCUM" : "mmol",
         "synonyms" : [
             "mmol"
         ],
@@ -40,6 +43,7 @@ UnitDefinitions = [
     {
         "id" : "KiloGM",
         "qudt" : "KiloGM",
+        "UCUM" : "kg",
         "synonyms" : [
             "kg"
         ],
@@ -50,6 +54,7 @@ UnitDefinitions = [
     {
         "id" : "GM",
         "qudt" : "GM",
+        "UCUM" : "g",
         "synonyms" : [
             "g"
         ],
@@ -60,6 +65,7 @@ UnitDefinitions = [
     {
         "id" : "MilliGM",
         "qudt" : "MilliGM",
+        "UCUM" : "mg",
         "synonyms" : [
             "mg"
         ],
@@ -70,6 +76,7 @@ UnitDefinitions = [
     {
         "id" : "MicroGM",
         "qudt" : "MicroGM",
+        "UCUM" : "ug",
         "synonyms" : [
             "ug"
         ],
@@ -80,6 +87,7 @@ UnitDefinitions = [
     {
         "id" : "L",
         "qudt" : "L",
+        "UCUM" : "L",
         "synonyms" : [
             "L"
         ],
@@ -90,6 +98,7 @@ UnitDefinitions = [
     {
         "id" : "MilliL",
         "qudt" : "MilliL",
+        "UCUM" : "mL",
         "synonyms" : [
             "mL"
         ],
@@ -101,6 +110,7 @@ UnitDefinitions = [
     {
         "id" : "MicroGM_PER_KiloGM",
         "qudt" : "MicroGM-PER-KiloGM",
+        "UCUM" : "ug/kg",
         "synonyms" : [
             "ug/kg",
             "ug_per_kg"
@@ -113,6 +123,7 @@ UnitDefinitions = [
     {
         "id" : "MilliGM_PER_KiloGM",
         "qudt" : "MilliGM-PER-KiloGM",
+        "UCUM" : "mg/kg",
         "synonyms" : [
             "mg/kg",
             "mg_per_kg"
@@ -125,6 +136,7 @@ UnitDefinitions = [
     {
         "id" : "GM_PER_KiloGM",
         "qudt" : "GM-PER-KiloGM",
+        "UCUM" : "g/kg",
         "synonyms" : [
             "g/kg",
             "g_per_kg"
@@ -137,6 +149,7 @@ UnitDefinitions = [
     {
         "id" : "MicroGM_PER_GM",
         "qudt" : "MicroGM-PER-GM",
+        "UCUM" : "ug/g",
         "synonyms" : [
             "ug/g",
             "ug_per_g"
@@ -149,6 +162,7 @@ UnitDefinitions = [
     {
         "id" : "MilliGM_PER_GM",
         "qudt" : "MilliGM-PER-GM",
+        "UCUM" : "mg/kg",
         "synonyms" : [
             "mg/g",
             "mg_per_g"
@@ -161,6 +175,7 @@ UnitDefinitions = [
     {
         "id" : "GM_PER_GM",
         "qudt" : "GM-PER-GM",
+        "UCUM" : "g/g",
         "synonyms" : [
             "g/g",
             "g_per_g"
@@ -173,6 +188,7 @@ UnitDefinitions = [
     {
         "id" : "MicroGM_PER_L",
         "qudt" : "MicroGM-PER-L",
+        "UCUM" : "ug/L",
         "synonyms" : [
             "ug_per_L",
             "ug/L"
@@ -185,6 +201,7 @@ UnitDefinitions = [
     {
         "id" : "MilliGM_PER_L",
         "qudt" : "MilliGM-PER-L",
+        "UCUM" : "mg/L",
         "synonyms" : [
             "mg_per_L",
             "mg/L"
@@ -197,6 +214,7 @@ UnitDefinitions = [
     {
         "id" : "GM_PER_L",
         "qudt" : "GM-PER-L",
+        "UCUM" : "g/L",
         "synonyms" : [
             "g_per_L",
             "g/L"
@@ -209,6 +227,7 @@ UnitDefinitions = [
     {
         "id" : "KiloGM_PER_L",
         "qudt" : "KiloGM-PER-L",
+        "UCUM" : "kg/L",
         "synonyms" : [
             "kg_per_L",
             "kg/L",
@@ -221,6 +240,7 @@ UnitDefinitions = [
     {
         "id" : "MOL_PER_L",
         "qudt" : "MOL-PER-L",
+        "UCUM" : "mol/L",
         "synonyms" : [
             "mol_per_L",
             "mol/L"
@@ -233,6 +253,7 @@ UnitDefinitions = [
     {
         "id" : "MilliMOL_PER_L",
         "qudt" : "MilliMOL-PER-L",
+        "UCUM" : "mmol/L",
         "synonyms" : [
             "mmol_per_L",
             "mmol/L"
@@ -246,6 +267,7 @@ UnitDefinitions = [
     {
         "id" : "SEC",
         "qudt" : "SEC",
+        "UCUM" : "s",
         "synonyms" : [
             "seconds",
             "s"
@@ -257,6 +279,7 @@ UnitDefinitions = [
     {
         "id" : "HR",
         "qudt" : "HR",
+        "UCUM" : "h",
         "synonyms" : [
             "hours",
             "h"
@@ -268,6 +291,7 @@ UnitDefinitions = [
     {
         "id" : "DAY",
         "qudt" : "DAY",
+        "UCUM" : "d",
         "synonyms" : [
             "days",
             "d"
@@ -280,10 +304,12 @@ UnitDefinitions = [
     {
         "id" : "PER_SEC",
         "qudt" : "PER-SEC",
+        "UCUM" : "/s",
         "synonyms" : [
             "per_second",
             "1/sec",
             "1/s",
+            "/s",
             "s-1"
         ],
         "units": [
@@ -293,9 +319,11 @@ UnitDefinitions = [
     {
         "id" : "PER_H",
         "qudt" : "PER-H",
+        "UCUM" : "/h",
         "synonyms" : [
             "per_hour",
             "1/h",
+            "/h",
             "h-1"
         ],
         "units": [
@@ -305,10 +333,12 @@ UnitDefinitions = [
     {
         "id" : "PER_DAY",
         "qudt" : "PER-DAY",
+        "UCUM" : "/d",
         "synonyms" : [
             "per_day",
             "1/day",
             "1/d",
+            "/d",
             "d-1"
         ],
         "units": [
@@ -318,6 +348,7 @@ UnitDefinitions = [
     {
         "id" : "MilliMOL_PER_HR",
         "qudt" : "MilliMOL-PER-HR",
+        "UCUM" : "mmol/h",
         "synonyms" : [
             "mmol_per_hour",
             "mmol/h"
@@ -330,6 +361,7 @@ UnitDefinitions = [
     {
         "id" : "MOL_PER_HR",
         "qudt" : "MOL-PER-HR",
+        "UCUM" : "mol/h",
         "synonyms" : [
             "mol/h",
             "mol_per_hour"
@@ -342,6 +374,7 @@ UnitDefinitions = [
     {
         "id" : "L_PER_HR",
         "qudt" : "L-PER-HR",
+        "UCUM" : "L/h",
         "synonyms" : [
             "L_per_h",
             "L/h",
@@ -355,6 +388,7 @@ UnitDefinitions = [
     {
         "id" : "DeciM_PER_HR",
         "qudt" : "DeciM-PER-HR",
+        "UCUM" : "dm/h",
         "synonyms" : [
             "dm_per_hour",
             "dm/h",
@@ -369,8 +403,10 @@ UnitDefinitions = [
     {
         "id" : "L_PER_KiloGM_HR",
         "qudt" : "L-PER-KiloGM-HR",
+        "UCUM" : "L/(kg.h)",
         "synonyms" : [
             "L_per_kg_h",
+            "L/(kg.h)",
             "L.kg-1.h-1"
         ],
         "units": [
@@ -382,7 +418,9 @@ UnitDefinitions = [
     {
         "id" : "MilliMOL_PER_L_HR",
         "qudt" : "MilliMOL-PER-L-HR",
+        "UCUM" : "mmol/(L.h)",
         "synonyms" : [
+            "mmol/(L.h)",
             "mM_per_L_h",
             "mM.L-1.h-1"
         ],
@@ -396,6 +434,7 @@ UnitDefinitions = [
     {
         "id" : "DeciM2",
         "qudt" : "DeciM2",
+        "UCUM" : "dm2",
         "synonyms" : [
             "dm_square",
             "dm^2",
@@ -409,6 +448,7 @@ UnitDefinitions = [
     {
         "id" : "DeciM",
         "qudt" : "DeciM",
+        "UCUM" : "dm",
         "synonyms" : [
             "dm"
         ],
