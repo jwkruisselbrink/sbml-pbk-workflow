@@ -430,6 +430,22 @@ UnitDefinitions = [
             { "kind": ls.UNIT_KIND_LITRE, "exponent": -1, "multiplier": 1, "scale": 3 },
         ]
     },
+    {
+        "id" : "L_PER_DAY_KiloGM3DIV4",
+        "qudt" : "",
+        "UCUM" : "L/(d.kg^0.75)",
+        "synonyms" : [
+            "L_PER_DAY_KiloGM.75",
+            "L/d/kg^0.75",
+            "L/(d.kg^0.75)"
+            "L.d-1.kg-0.75)"
+        ],
+        "units": [
+            { "kind": ls.UNIT_KIND_LITRE, "exponent": 1, "multiplier": 1, "scale": 0 },
+            { "kind": ls.UNIT_KIND_SECOND, "exponent": -1, "multiplier": 86400, "scale": 1 },
+            { "kind": ls.UNIT_KIND_GRAM, "exponent": -0.75, "multiplier": 1, "scale": 3 },
+        ]
+    },
     # Area units
     {
         "id" : "DeciM2",
@@ -454,6 +470,17 @@ UnitDefinitions = [
         ],
         "units": [
             { "kind": ls.UNIT_KIND_METRE, "exponent": 1, "multiplier": 1, "scale": -1 },
+        ]
+    },
+    {
+        "id" : "CentiM",
+        "qudt" : "CentiM",
+        "UCUM" : "cm",
+        "synonyms" : [
+            "cm"
+        ],
+        "units": [
+            { "kind": ls.UNIT_KIND_METRE, "exponent": 1, "multiplier": 1, "scale": -2 },
         ]
     }
 ]

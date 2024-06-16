@@ -4,7 +4,12 @@ import libsbml as ls
 from pathlib import Path
 import traceback
 import pandas as pd
+from unit_definitions import UnitDefinitions
+from term_definitions import TermDefinitions
 
+'''
+Creates an annotation template for the provided SBML file.
+'''
 def main():
     parser = argparse.ArgumentParser(description="Create a CSV file of the terms of an SBML model")
     parser.add_argument("sbml_file", help="Full path to the SBML file")
@@ -37,25 +42,46 @@ def main():
         df.to_csv(f_out, index=False)
         print(f'{f_in} converted to {f_out}')
     else:
-        print(f'{f_out} exists, use -f to force conversion')
+        print(f'{f_out} already exists, use -f to force conversion')
+
+def getUnitString(element):
+    unit = ls.UnitDefinition.printUnits(element.getDerivedUnitDefinition())
+    unit = element.getUnits()
+    if (unit):
+        for index, value in enumerate(UnitDefinitions):
+            if unit.lower() == value['id'].lower() \
+                or any(val.lower() == unit.lower() for val in value['synonyms']):
+                return value['UCUM']
+    return ""
+
+def getResourceDefinition(element, element_type):
+    '''
+    Tries to find a resource description for the specified element.
+    '''
+    element_id = element.getId()
+    for index, value in enumerate(TermDefinitions):
+        if value['element_type'] == element_type:
+            if 'recommended_id' in value.keys() \
+                and element_id.lower() == value['recommended_id'].lower():
+                return value
+            elif 'synonyms' in value.keys() \
+                and any(element_id.lower() == val.lower() for val in value['synonyms']):
+                return value
+    return None
 
 # Helper function to extract is-a resource URI
 def getTerm(element):
     cvTerms = element.getCVTerms()
-    if not cvTerms:
-        return None
-
-    for term in cvTerms:
-      num_resources = term.getNumResources()
-      for j in range(num_resources):
-          if term.getQualifierType() == ls.BIOLOGICAL_QUALIFIER and \
-              term.getBiologicalQualifierType() == ls.BQB_IS:
-              return term.getResourceURI(j)
+    if cvTerms:
+        # Check if there already is an annotation for the element
+        for term in cvTerms:
+            num_resources = term.getNumResources()
+            for j in range(num_resources):
+                if term.getQualifierType() == ls.BIOLOGICAL_QUALIFIER and \
+                    term.getBiologicalQualifierType() == ls.BQB_IS:
+                    return term.getResourceURI(j)
 
     return None 
-
-def getUnitString(element):
-    return ls.UnitDefinition.printUnits(element.getDerivedUnitDefinition())
 
 def exportTerms(model):
     dt = []
@@ -67,46 +93,100 @@ def exportTerms(model):
     dt.extend(dt_parameters)
     terms = pd.DataFrame(
         dt,
-        columns=["Id", "Type", "Name", "Unit", "URI"]
+        columns=["element_id", "sbml_type", "name", "unit", "URI", "description", "remark"]
     )
     return terms
 
 def getCompartmentTerms(model):
+    element_type="compartment"
     dt = []
     for i in range(0,model.getNumCompartments()):
-        c = model.getCompartment(i)
+        element = model.getCompartment(i)
+
+        name = element.getName()
+        description = ''
+        uri = getTerm(element)
+
+        # Try to find resource definition for element
+        resource = getResourceDefinition(element, element_type)
+        if (resource is not None):
+            if 'resources' in resource.keys():
+                uri = resource['resources'][0]['URI']
+            if 'name' in resource.keys():
+                name = resource['name']
+            if 'description' in resource.keys():
+                description = resource['description']
+
         dt.append([
-            c.getId(),
-            "compartment",
-            c.getName(),
-            getUnitString(c),
-            getTerm(c)
+            element.getId(),
+            element_type,
+            name,
+            getUnitString(element),
+            uri,
+            description,
+            ""
         ])
     return dt
 
 def getSpeciesTerms(model):
+    element_type="species"
     dt = []
     for i in range(0,model.getNumSpecies()):
-        s = model.getSpecies(i)
+        element = model.getSpecies(i)
+
+        name = element.getName()
+        description = ''
+        uri = getTerm(element)
+
+        # Try to find resource definition for element
+        resource = getResourceDefinition(element, element_type)
+        if (resource is not None):
+            if 'resources' in resource.keys():
+                uri = resource['resources'][0]['URI']
+            if 'name' in resource.keys():
+                name = resource['name']
+            if 'description' in resource.keys():
+                description = resource['description']
+
         dt.append([
-            s.getId(),
-            "species",
-            s.getName(),
-            getUnitString(s),
-            getTerm(s)
+            element.getId(),
+            element_type,
+            name,
+            getUnitString(element),
+            uri,
+            description,
+            ""
         ])
     return dt
 
 def getParameterTerms(model):
+    element_type="parameter"
     dt = []
     for i in range(0,model.getNumParameters()):
-        s = model.getParameter(i)
+        element = model.getParameter(i)
+
+        name = element.getName()
+        description = ''
+        uri = getTerm(element)
+
+        # Try to find resource definition for element
+        resource = getResourceDefinition(element, element_type)
+        if (resource is not None):
+            if 'resources' in resource.keys():
+                uri = resource['resources'][0]['URI']
+            if 'name' in resource.keys():
+                name = resource['name']
+            if 'description' in resource.keys():
+                description = resource['description']
+
         dt.append([
-            s.getId(),
-            "parameters",
-            s.getName(),
-            getUnitString(s),
-            getTerm(s)
+            element.getId(),
+            element_type,
+            name,
+            getUnitString(element),
+            uri,
+            description,
+            ""
         ])
     return dt
 
