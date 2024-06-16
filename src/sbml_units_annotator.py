@@ -88,7 +88,7 @@ class sbmlUnitsAnnotator:
         if (unitId not in unitsDictionary):
             unitDef = self.findUnitDefinition(unitId)
             if (unitDef is None):
-                logger.error(f"Cannot set unit [{unitId}]]: unknown unit definition!")
+                logger.error(f"Cannot set unit [{unitId}]: unknown unit definition!")
                 return
             model = doc.getModel()
             uDef = model.getUnitDefinition(unitDef["id"])
