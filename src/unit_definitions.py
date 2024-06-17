@@ -263,6 +263,20 @@ UnitDefinitions = [
             { "kind": ls.UNIT_KIND_LITRE, "exponent": -1, "multiplier": 1, "scale": 0 }
         ]
     },
+    {
+        "id" : "GM_PER_MOL",
+        "qudt" : "GM-PER-MOL",
+        "UCUM" : "g/mol",
+        "synonyms" : [
+            "g/mol",
+            "g.mol-1",
+            "g_per_mol"
+        ],
+        "units": [
+            { "kind": ls.UNIT_KIND_GRAM, "exponent": 1, "multiplier": 1, "scale": 0 },
+            { "kind": ls.UNIT_KIND_MOLE, "exponent": -1, "multiplier": 1, "scale": 0 }
+        ]
+    },
     # Time units
     {
         "id" : "SEC",
@@ -382,6 +396,20 @@ UnitDefinitions = [
         ],
         "units": [
             { "kind": ls.UNIT_KIND_LITRE, "exponent": 1, "multiplier": 1, "scale": 0 },
+            { "kind": ls.UNIT_KIND_SECOND, "exponent": -1, "multiplier": 3600, "scale": 1 }
+        ]
+    },
+    {
+        "id" : "CentiM_PER_HR",
+        "qudt" : "CentiM-PER-HR",
+        "UCUM" : "cm/h",
+        "synonyms" : [
+            "cm_per_hour",
+            "cm/h",
+            "cm.h-1"
+        ],
+        "units": [
+            { "kind": ls.UNIT_KIND_METRE, "exponent": 1, "multiplier": 1, "scale": -2 },
             { "kind": ls.UNIT_KIND_SECOND, "exponent": -1, "multiplier": 3600, "scale": 1 }
         ]
     },

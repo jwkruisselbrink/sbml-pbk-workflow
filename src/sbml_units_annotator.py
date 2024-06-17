@@ -40,7 +40,14 @@ class sbmlUnitsAnnotator:
                     row["unit"],
                     unitsDictionary
                 )
-
+            if (elementId and row["name"] is not None):
+                self.setElementName(
+                    document,
+                    row["element_id"],
+                    row["sbml_type"],
+                    row["name"],
+                    True
+                )
 
         # Write SBML file
         logger.info(f"Writing SBML to file [{out_file}].")
@@ -83,6 +90,22 @@ class sbmlUnitsAnnotator:
                 if (uDef):
                     logger.info(f"Setting unit [{unitId}] for {elementType} [{elementId}].")
                     el.setUnits(uDef.getId())
+
+    def setElementName(
+        self,
+        doc,
+        elementId,
+        elementType,
+        name,
+        overwrite
+    ):
+        """Set element unit of element with specified id and type to the specfied unit."""
+        el = doc.getElementBySId(elementId)
+        if (el is None):
+            logger.error(f"Cannot set name for {elementType} [{elementId}]: element not found!")
+            return
+        if not el.isSetName() or overwrite:
+            el.setName(name)
 
     def getOrAddUnitDefinition(self, doc, unitId, unitsDictionary):
         if (unitId not in unitsDictionary):

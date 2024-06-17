@@ -68,10 +68,11 @@ TermDefinitions = [
     {
         "name": "arterial blood plasma",
         "element_type": "compartment",
-        "recommended_id": "Art_Plasma",
+        "recommended_id": "Art_Plas",
         "description": "Arterial blood plasma compartment.",
         "synonyms": [
-            "Art_Plas"
+            "Art_Plas",
+            "Art_Plasma",
             "arterial blood plasma"
         ]
     },
@@ -257,7 +258,7 @@ TermDefinitions = [
     {
         "name": "venous blood plasma",
         "element_type": "compartment",
-        "recommended_id": "Ven_Plasma",
+        "recommended_id": "Ven_Plas",
         "description": "Venous blood plasma compartment.",
         "synonyms": [
             "Ven_Plas",
@@ -308,7 +309,7 @@ TermDefinitions = [
             }
         ]
     },
-    # Parameters
+    # Parameters: physiological
     {
         "name": "body mass",
         "element_type": "parameter",
@@ -351,11 +352,140 @@ TermDefinitions = [
         "name": "cardiac blood output",
         "recommended_id": "QCC",
         "element_type": "parameter",
-        "description": "Cardiac blood output.",
+        "description": "Cardiac blood output as a function of body weight.",
         "synonyms": [
             "QCC"
         ]
     },
+    # Parameters: physiological - compartment volumes
+    {
+        "name": "alveolar volume",
+        "element_type": "parameter",
+        "recommended_id": "VAlv",
+        "description": "Alveolar volume.",
+        "synonyms": [
+            "VAlv"
+        ]
+    },
+    {
+        "name": "arterial blood plasma volume",
+        "element_type": "parameter",
+        "recommended_id": "VArt_Plas",
+        "description": "Volume of arterial blood plasma.",
+        "synonyms": [
+            "VArt_Plas",
+            "VArt_Plasma"
+        ]
+    },
+    {
+        "name": "fat volume",
+        "element_type": "parameter",
+        "recommended_id": "VFat",
+        "description": "Volume of adipose tissue or fat compartment.",
+        "synonyms": [
+            "VFat",
+            "VF"
+        ]
+    },
+    {
+        "name": "gut volume",
+        "element_type": "parameter",
+        "recommended_id": "VGut",
+        "description": "Volume of the gut.",
+        "synonyms": [
+            "VGut",
+            "VG"
+        ]
+    },
+    {
+        "name": "kidney volume",
+        "element_type": "parameter",
+        "recommended_id": "VKidney",
+        "description": "Volume of kidney compartment.",
+        "synonyms": [
+            "VKidney",
+            "VK"
+        ]
+    },
+    {
+        "name": "liver volume",
+        "element_type": "parameter",
+        "recommended_id": "VLiver",
+        "description": "Volume of liver compartment.",
+        "synonyms": [
+            "VLiver",
+            "VL"
+        ]
+    },
+    {
+        "name": "lung volume",
+        "element_type": "parameter",
+        "recommended_id": "VLung",
+        "description": "Volume of the lung compartment.",
+        "synonyms": [
+            "VLung",
+            "VLun"
+        ]
+    },
+    {
+        "name": "plasma volume",
+        "element_type": "parameter",
+        "recommended_id": "VPlasma",
+        "description": "Volume of blood plasma.",
+        "synonyms": [
+            "VPlasma",
+            "VPlas"
+        ]
+    },
+    {
+        "name": "rest-of-body volume",
+        "element_type": "parameter",
+        "recommended_id": "VRest",
+        "description": "Volume of rest-of-body compartment.",
+        "synonyms": [
+            "VRest",
+            "VR"
+        ]
+    },
+    {
+        "name": "skin volume",
+        "element_type": "parameter",
+        "recommended_id": "VSkin",
+        "description": "Volume of skin.",
+        "synonyms": [
+            "VSkin",
+            "VSk"
+        ]
+    },
+    {
+        "name": "stratum corneum volume",
+        "element_type": "parameter",
+        "recommended_id": "VSC",
+        "description": "Volume of stratum corneum.",
+        "synonyms": [
+            "VSC"
+        ]
+    },
+    {
+        "name": "venous blood plasma volume",
+        "element_type": "parameter",
+        "recommended_id": "VVen_Plas",
+        "description": "Volume of blood plasma.",
+        "synonyms": [
+            "VVen_Plas",
+            "VVen_Plasma"
+        ]
+    },
+    {
+        "name": "viable epidermis corneum volume",
+        "element_type": "parameter",
+        "recommended_id": "VVE",
+        "description": "Volume of viable epidermis.",
+        "synonyms": [
+            "VVE"
+        ]
+    },
+    # Parameters: chemical
     {
         "name": "molar weight",
         "recommended_id": "MW",
@@ -363,6 +493,99 @@ TermDefinitions = [
         "description": "Molecular weight.",
         "synonyms": [
             "MW"
+        ]
+    },
+    {
+        "name": "logP",
+        "element_type": "parameter",
+        "recommended_id": "logP",
+        "description": "logP descriptor.",
+        "synonyms": [
+            "logP"
+        ],
+        "resources": [
+            {
+                "qualifier": "bqbiol:is",
+                "URI": "http://semanticscience.org/resource/CHEMINF_000251"
+            }
+        ]
+    },
+    # Parameters: chemical - partition coefficients
+    {
+        "name": "partition coefficient fat/plasma",
+        "element_type": "parameter",
+        "recommended_id": "PC_Fat_Plas",
+        "description": "Partition coefficient fat/plasma.",
+        "synonyms": [
+            "PF",
+            "PC_Fat_Plas",
+            "PC_Fat_Plasma"
+        ]
+    },
+    {
+        "name": "partition coefficient gut/plasma",
+        "element_type": "parameter",
+        "recommended_id": "PC_Gut_Plas",
+        "description": "Partition coefficient gut/plasma.",
+        "synonyms": [
+            "PG",
+            "PC_Git_Plas",
+            "PC_Gut_Plasma"
+        ]
+    },
+    {
+        "name": "partition coefficient kidney/plasma",
+        "element_type": "parameter",
+        "recommended_id": "PC_Kid_Plas",
+        "description": "Partition coefficient kidney/plasma.",
+        "synonyms": [
+            "PK",
+            "PC_Kid_Plas",
+            "PC_Kidney_Plasma"
+        ]
+    },
+    {
+        "name": "partition coefficient liver/plasma",
+        "element_type": "parameter",
+        "recommended_id": "PC_Liv_Plas",
+        "description": "Partition coefficient liver/plasma.",
+        "synonyms": [
+            "PL",
+            "PC_Liv_Plas",
+            "PC_Liver_Plasma"
+        ]
+    },
+    {
+        "name": "partition coefficient lung/plasma",
+        "element_type": "parameter",
+        "recommended_id": "PC_Lun_Plas",
+        "description": "Partition coefficient lung/plasma.",
+        "synonyms": [
+            "PLun",
+            "PC_Lun_Plas",
+            "PC_Lun_Plasma"
+        ]
+    },
+    {
+        "name": "partition coefficient rest-of-body/plasma",
+        "element_type": "parameter",
+        "recommended_id": "PC_Rest_Plas",
+        "description": "Partition coefficient rest-of-body/plasma.",
+        "synonyms": [
+            "PR",
+            "PC_Rest_Plas",
+            "PC_Rest_Plasma"
+        ]
+    },
+    {
+        "name": "partition coefficient skin/plasma",
+        "element_type": "parameter",
+        "recommended_id": "PC_Skin_Plas",
+        "description": "Partition coefficient skin/plasma.",
+        "synonyms": [
+            "PSk",
+            "PC_Skin_Plas",
+            "PC_Skin_Plasma"
         ]
     }
 ]
