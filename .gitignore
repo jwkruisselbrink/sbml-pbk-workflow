@@ -1,1 +1,7 @@
+# Visual studio code
+.vscode/*
+
+# Python
 *.pyc
+**/__pycache__
+.ipynb_checkpoints
