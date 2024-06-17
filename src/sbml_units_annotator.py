@@ -1,8 +1,10 @@
 import libsbml as ls
 import numpy as np
-from sbmlutils.metadata.annotator import ModelAnnotator
+from sbmlutils.metadata.annotator import ModelAnnotator, ExternalAnnotation, annotate_sbml_doc
 from sbmlutils.log import get_logger
 from unit_definitions import UnitDefinitions
+from typing import List
+
 logger = get_logger(__name__)
 
 class sbmlUnitsAnnotator:
@@ -32,22 +34,43 @@ class sbmlUnitsAnnotator:
         # Iterate over annotation records
         for index, row in df.iterrows():
             elementId = str(row["element_id"])
-            if (elementId and row["unit"] is not None):
-                self.setElementUnit(
-                    document,
-                    row["element_id"],
-                    row["sbml_type"],
-                    row["unit"],
-                    unitsDictionary
-                )
-            if (elementId and row["name"] is not None):
-                self.setElementName(
-                    document,
-                    row["element_id"],
-                    row["sbml_type"],
-                    row["name"],
-                    True
-                )
+            if (elementId):
+                if (row["unit"] is not None):
+                    self.setElementUnit(
+                        document,
+                        row["element_id"],
+                        row["sbml_type"],
+                        row["unit"],
+                        unitsDictionary
+                    )
+                
+                if ("element_description" in row \
+                    and row["element_description"] is not None):
+                    self.setElementName(
+                        document,
+                        row["element_id"],
+                        row["sbml_type"],
+                        row["element_description"],
+                        True
+                    )
+
+        # Annotate model terms if URI field is set
+        if ('URI' in df.columns):
+            df = df[df['URI'].notnull()]
+            if (not 'pattern' in df.columns):
+                df['pattern'] = df['element_id'] 
+            if (not 'annotation_type' in df.columns):
+                df['annotation_type'] = 'rdf'
+            if (not 'qualifier' in df.columns):
+                df['qualifier'] = 'BQB_IS'
+            if (not 'resource' in df.columns):
+                df['resource'] = df['URI']
+
+            entries = df.to_dict("records")
+            annotations = []
+            for entry in entries:
+                annotations.append(ExternalAnnotation(entry))
+            annotate_sbml_doc(document, annotations)
 
         # Write SBML file
         logger.info(f"Writing SBML to file [{out_file}].")

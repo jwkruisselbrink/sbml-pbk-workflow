@@ -150,6 +150,12 @@ TermDefinitions = [
         "synonyms": [
             "kidney",
             "kid"
+        ],
+        "resources": [
+            {
+                "qualifier": "bqbiol:is",
+                "URI": "uberon/UBERON:0002113"
+            }
         ]
     },
     {
@@ -176,6 +182,12 @@ TermDefinitions = [
         "synonyms": [
             "lung",
             "lungs"
+        ],
+        "resources": [
+            {
+                "qualifier": "bqbiol:is",
+                "URI": "uberon/UBERON:0000479"
+            }
         ]
     },
     {
@@ -229,6 +241,12 @@ TermDefinitions = [
         "description": "Stratum corneum compartment.",
         "synonyms": [
             "stratum corneum"
+        ],
+        "resources": [
+            {
+                "qualifier": "bqbiol:is",
+                "URI": "uberon/UBERON:0002027"
+            }
         ]
     },
     {
@@ -238,6 +256,12 @@ TermDefinitions = [
         "description": "Urine compartment.",
         "synonyms": [
             "urine"
+        ],
+        "resources": [
+            {
+                "qualifier": "bqbiol:is",
+                "URI": "uberon/UBERON:0001088"
+            }
         ]
     },
     {

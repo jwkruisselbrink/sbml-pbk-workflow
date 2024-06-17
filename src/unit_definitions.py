@@ -463,9 +463,9 @@ UnitDefinitions = [
         "qudt" : "",
         "UCUM" : "L/(d.kg^0.75)",
         "synonyms" : [
-            "L_PER_DAY_KiloGM.75",
+            "L_PER_DAY_KiloGM3DIV4.75",
             "L/d/kg^0.75",
-            "L/(d.kg^0.75)"
+            "L/(d.kg^0.75)",
             "L.d-1.kg-0.75)"
         ],
         "units": [

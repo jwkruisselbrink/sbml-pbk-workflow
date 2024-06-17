@@ -93,7 +93,7 @@ def exportTerms(model):
     dt.extend(dt_parameters)
     terms = pd.DataFrame(
         dt,
-        columns=["element_id", "sbml_type", "name", "unit", "URI", "description", "remark"]
+        columns=["element_id", "sbml_type", "element_description", "unit", "URI", "description", "remark"]
     )
     return terms
 
