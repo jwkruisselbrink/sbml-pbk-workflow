@@ -11,7 +11,7 @@ from term_definitions import TermDefinitions
 Creates an annotation template for the provided SBML file.
 '''
 def main():
-    parser = argparse.ArgumentParser(description="Create a CSV file of the terms of an SBML model")
+    parser = argparse.ArgumentParser(description="Create a CSV file of the terms of an SBML model.")
     parser.add_argument("sbml_file", help="Full path to the SBML file")
     parser.add_argument("-o", "--out", required=False, help="Output file")
     parser.add_argument("-f", "--force", action="store_true", help="Overwrite existing")
