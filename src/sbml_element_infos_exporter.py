@@ -132,7 +132,7 @@ class sbmlElementInfosExporter:
         if (unit):
             for index, value in enumerate(UnitDefinitions):
                 if unit.lower() == value['id'].lower() \
-                    or any(val.lower() == unit.lower() for val in value['common_ids']):
+                    or any(val.lower() == unit.lower() for val in value['synonyms']):
                     return value['UCUM'] if value['UCUM'] else value['id']
         return ""
 

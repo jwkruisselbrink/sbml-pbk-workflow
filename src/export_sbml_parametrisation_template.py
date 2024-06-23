@@ -4,8 +4,6 @@ import libsbml as ls
 from pathlib import Path
 import traceback
 import pandas as pd
-from unit_definitions import UnitDefinitions
-from term_definitions import TermDefinitions
 
 def main():
     """Creates a parametrisation template for the provided SBML file."""
