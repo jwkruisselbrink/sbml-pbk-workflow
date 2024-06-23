@@ -37,10 +37,13 @@ TermDefinitions = [
         "name": "adipose tissue",
         "element_type": "compartment",
         "description": "Adipose tissue (fat) compartment.",
-        "recommended_id": "Fat",
         "synonyms": [
             "fat",
             "adipose tissue"
+        ],
+        "recommended_id": "Fat",
+        "common_ids": [
+            "fat",
         ],
         "resources": [
             {
@@ -52,11 +55,11 @@ TermDefinitions = [
     {
         "name": "arterial blood",
         "element_type": "compartment",
-        "recommended_id": "Art",
         "description": "Arterial blood compartment.",
-        "synonyms": [
-            "arterial blood",
-            "art"
+        "synonyms": [],
+        "recommended_id": "Art",
+        "common_ids": [
+            "art",
         ],
         "resources": [
             {
@@ -68,21 +71,22 @@ TermDefinitions = [
     {
         "name": "arterial blood plasma",
         "element_type": "compartment",
-        "recommended_id": "Art_Plas",
         "description": "Arterial blood plasma compartment.",
-        "synonyms": [
+        "synonyms": [],
+        "recommended_id": "Art_Plas",
+        "common_ids": [
             "Art_Plas",
-            "Art_Plasma",
-            "arterial blood plasma"
-        ]
+            "Art_Plasma"
+        ],
     },
     {
         "name": "blood",
         "element_type": "compartment",
-        "recommended_id": "Blood",
         "description": "Blood compartment.",
-        "synonyms": [
-            "plasma"
+        "synonyms": [],
+        "recommended_id": "Blood",
+        "common_ids": [
+            "Blood"
         ],
         "resources": [
             {
@@ -94,10 +98,12 @@ TermDefinitions = [
     {
         "name": "blood plasma",
         "element_type": "compartment",
-        "recommended_id": "Plasma",
         "description": "Blood plasma compartment.",
-        "synonyms": [
-            "blood plasma"
+        "synonyms": [],
+        "recommended_id": "Plasma",
+        "common_ids": [
+            "Plasma"
+            "Blood_plasma"
         ],
         "resources": [
             {
@@ -107,21 +113,12 @@ TermDefinitions = [
         ]
     },
     {
-        "name": "epidermis",
-        "element_type": "compartment",
-        "recommended_id": "Epidermis",
-        "description": "Epidermis compartment.",
-        "synonyms": [
-            "epidermis",
-            "skin epidermis"
-        ]
-    },
-    {
         "name": "filtrate",
         "element_type": "compartment",
-        "recommended_id": "Filtrate",
         "description": "Filtrate compartment.",
-        "synonyms": [
+        "synonyms": [],
+        "recommended_id": "Filtrate",
+        "common_ids": [
             "filtrate",
             "fil"
         ]
@@ -129,11 +126,11 @@ TermDefinitions = [
     {
         "name": "gut",
         "element_type": "compartment",
-        "recommended_id": "Gut",
         "description": "Gut (digestive tract) compartment.",
-        "synonyms": [
-            "gut",
-            "digestive tract"
+        "synonyms": [],
+        "recommended_id": "Gut",
+        "common_ids": [
+            "gut"
         ],
         "resources": [
             {
@@ -145,9 +142,10 @@ TermDefinitions = [
     {
         "name": "kidney",
         "element_type": "compartment",
-        "recommended_id": "Kidney",
         "description": "Kidney compartment.",
-        "synonyms": [
+        "synonyms": [],
+        "recommended_id": "Kidney",
+        "common_ids": [
             "kidney",
             "kid"
         ],
@@ -161,9 +159,10 @@ TermDefinitions = [
     {
         "name": "liver",
         "element_type": "compartment",
-        "recommended_id": "Liver",
         "description": "Liver compartment.",
-        "synonyms": [
+        "synonyms": [],
+        "recommended_id": "Liver",
+        "common_ids": [
             "liver",
             "liv"
         ],
@@ -177,9 +176,10 @@ TermDefinitions = [
     {
         "name": "lung",
         "element_type": "compartment",
-        "recommended_id": "Lung",
         "description": "Lung compartment.",
-        "synonyms": [
+        "synonyms": [],
+        "recommended_id": "Lung",
+        "common_ids": [
             "lung",
             "lungs"
         ],
@@ -193,18 +193,20 @@ TermDefinitions = [
     {
         "name": "poorly perfused tissue",
         "element_type": "compartment",
-        "recommended_id": "Poor",
         "description": "Poorly perfused tissue compartment.",
-        "synonyms": [
-            "poorly perfused tissue"
+        "synonyms": [],
+        "recommended_id": "Poor",
+        "common_ids": [
+            "Poor"
         ]
     },
     {
         "name": "rest-of-body",
         "element_type": "compartment",
         "description": "Rest-of-body compartment.",
+        "synonyms": [],
         "recommended_id": "Rest",
-        "synonyms": [
+        "common_ids": [
             "rest-of-body",
             "rest",
             "periphery"
@@ -214,18 +216,20 @@ TermDefinitions = [
         "name": "richly perfused tissue",
         "element_type": "compartment",
         "description": "Richly perfused tissue compartment.",
+        "synonyms": [],
         "recommended_id": "Rich",
-        "synonyms": [
-            "richly perfused tissue"
+        "common_ids": [
+            "Rich"
         ]
     },
     {
         "name": "skin",
         "element_type": "compartment",
-        "recommended_id": "Skin",
         "description": "Skin compartment.",
-        "synonyms": [
-            "skin"
+        "synonyms": [],
+        "recommended_id": "Skin",
+        "common_ids": [
+            "Skin"
         ],
         "resources": [
             {
@@ -237,10 +241,12 @@ TermDefinitions = [
     {
         "name": "stratum corneum",
         "element_type": "compartment",
-        "recommended_id": "SC",
         "description": "Stratum corneum compartment.",
-        "synonyms": [
-            "stratum corneum"
+        "synonyms": [],
+        "recommended_id": "SC",
+        "common_ids": [
+            "SC",
+            "Skin_sc"
         ],
         "resources": [
             {
@@ -250,11 +256,34 @@ TermDefinitions = [
         ]
     },
     {
+        "name": "stratum corneum exposed skin",
+        "element_type": "compartment",
+        "description": "Stratum corneum of exposed skin compartment.",
+        "synonyms": [],
+        "recommended_id": "SC_e",
+        "common_ids": [
+            "SC_e",
+            "Skin_sc_e"
+        ]
+    },
+    {
+        "name": "stratum corneum unexposed skin",
+        "element_type": "compartment",
+        "description": "Stratum corneum of unexposed skin compartment.",
+        "synonyms": [],
+        "recommended_id": "SC_u",
+        "common_ids": [
+            "SC_u",
+            "Skin_sc_u"
+        ]
+    },
+    {
         "name": "urine",
         "element_type": "compartment",
-        "recommended_id": "Urine",
         "description": "Urine compartment.",
-        "synonyms": [
+        "synonyms": [],
+        "recommended_id": "Urine",
+        "common_ids": [
             "urine"
         ],
         "resources": [
@@ -267,10 +296,11 @@ TermDefinitions = [
     {
         "name": "venous blood",
         "element_type": "compartment",
-        "recommended_id": "Ven",
         "description": "Venous blood compartment.",
-        "synonyms": [
-            "venous blood"
+        "synonyms": [],
+        "recommended_id": "Ven",
+        "common_ids": [
+            "Ven"
         ],
         "resources": [
             {
@@ -282,11 +312,11 @@ TermDefinitions = [
     {
         "name": "venous blood plasma",
         "element_type": "compartment",
-        "recommended_id": "Ven_Plas",
         "description": "Venous blood plasma compartment.",
-        "synonyms": [
-            "Ven_Plas",
-            "venous blood plasma"
+        "synonyms": [],
+        "recommended_id": "Ven_Plas",
+        "common_ids": [
+            "Ven_Plas"
         ],
         "resources": [
             {
@@ -298,10 +328,34 @@ TermDefinitions = [
     {
         "name": "viable epidermis",
         "element_type": "compartment",
-        "recommended_id": "VE",
         "description": "Viable epidermis compartment.",
-        "synonyms": [
-            "viable epidermis"
+        "synonyms": [],
+        "recommended_id": "VE",
+        "common_ids": [
+            "VE",
+            "Skin_ve"
+        ]
+    },
+    {
+        "name": "viable epidermis exposed",
+        "element_type": "compartment",
+        "description": "Viable epidermis of exposed skin compartment.",
+        "synonyms": [],
+        "recommended_id": "VE_u",
+        "common_ids": [
+            "VE_u",
+            "Skin_ve_u"
+        ]
+    },
+    {
+        "name": "viable epidermis unexposed",
+        "element_type": "compartment",
+        "description": "Viable epidermis of unexposed skin compartment.",
+        "synonyms": [],
+        "recommended_id": "VE_u",
+        "common_ids": [
+            "VE_u",
+            "Skin_ve_u"
         ]
     },
     # Species terms
@@ -309,7 +363,8 @@ TermDefinitions = [
         "name": "metabolite",
         "element_type": "species",
         "description": "Species is a metabolite.",
-        "synonyms": [
+        "synonyms": [],
+        "common_ids": [
             "metabolite"
         ],
         "resources": [
@@ -323,7 +378,8 @@ TermDefinitions = [
         "name": "simple chemical",
         "element_type": "species",
         "description": "Species is a simple chemical.",
-        "synonyms": [
+        "synonyms": [],
+        "common_ids": [
             "simple chemical"
         ],
         "resources": [
@@ -337,9 +393,10 @@ TermDefinitions = [
     {
         "name": "body mass",
         "element_type": "parameter",
-        "recommended_id": "BW",
         "description": "Body mass (or body weight) parameter.",
-        "synonyms": [
+        "synonyms": [],
+        "recommended_id": "BW",
+        "common_ids": [
             "BM",
             "BW",
             "body mass",
@@ -359,11 +416,11 @@ TermDefinitions = [
     {
         "name": "body surface area",
         "element_type": "parameter",
-        "recommended_id": "BSA",
         "description": "Body surface area (BSA) parameter.",
-        "synonyms": [
-            "BSA",
-            "body surface area"
+        "synonyms": [],
+        "recommended_id": "BSA",
+        "common_ids": [
+            "BSA"
         ],
         "resources": [
             {
@@ -374,10 +431,11 @@ TermDefinitions = [
     },
     {
         "name": "cardiac blood output",
-        "recommended_id": "QCC",
         "element_type": "parameter",
         "description": "Cardiac blood output as a function of body weight.",
-        "synonyms": [
+        "synonyms": [],
+        "recommended_id": "QCC",
+        "common_ids": [
             "QCC"
         ]
     },
@@ -385,18 +443,20 @@ TermDefinitions = [
     {
         "name": "alveolar volume",
         "element_type": "parameter",
-        "recommended_id": "VAlv",
         "description": "Alveolar volume.",
-        "synonyms": [
+        "synonyms": [],
+        "recommended_id": "VAlv",
+        "common_ids": [
             "VAlv"
         ]
     },
     {
         "name": "arterial blood plasma volume",
         "element_type": "parameter",
-        "recommended_id": "VArt_Plas",
         "description": "Volume of arterial blood plasma.",
-        "synonyms": [
+        "synonyms": [],
+        "recommended_id": "VArt_Plas",
+        "common_ids": [
             "VArt_Plas",
             "VArt_Plasma"
         ]
@@ -404,9 +464,10 @@ TermDefinitions = [
     {
         "name": "fat volume",
         "element_type": "parameter",
-        "recommended_id": "VFat",
         "description": "Volume of adipose tissue or fat compartment.",
-        "synonyms": [
+        "synonyms": [],
+        "recommended_id": "VFat",
+        "common_ids": [
             "VFat",
             "VF"
         ]
@@ -414,9 +475,10 @@ TermDefinitions = [
     {
         "name": "gut volume",
         "element_type": "parameter",
-        "recommended_id": "VGut",
         "description": "Volume of the gut.",
-        "synonyms": [
+        "synonyms": [],
+        "recommended_id": "VGut",
+        "common_ids": [
             "VGut",
             "VG"
         ]
@@ -424,9 +486,10 @@ TermDefinitions = [
     {
         "name": "kidney volume",
         "element_type": "parameter",
-        "recommended_id": "VKidney",
         "description": "Volume of kidney compartment.",
-        "synonyms": [
+        "synonyms": [],
+        "recommended_id": "VKidney",
+        "common_ids": [
             "VKidney",
             "VK"
         ]
@@ -434,9 +497,10 @@ TermDefinitions = [
     {
         "name": "liver volume",
         "element_type": "parameter",
-        "recommended_id": "VLiver",
         "description": "Volume of liver compartment.",
-        "synonyms": [
+        "synonyms": [],
+        "recommended_id": "VLiver",
+        "common_ids": [
             "VLiver",
             "VL"
         ]
@@ -444,9 +508,10 @@ TermDefinitions = [
     {
         "name": "lung volume",
         "element_type": "parameter",
-        "recommended_id": "VLung",
         "description": "Volume of the lung compartment.",
-        "synonyms": [
+        "synonyms": [],
+        "recommended_id": "VLung",
+        "common_ids": [
             "VLung",
             "VLun"
         ]
@@ -454,9 +519,10 @@ TermDefinitions = [
     {
         "name": "plasma volume",
         "element_type": "parameter",
-        "recommended_id": "VPlasma",
         "description": "Volume of blood plasma.",
-        "synonyms": [
+        "synonyms": [],
+        "recommended_id": "VPlasma",
+        "common_ids": [
             "VPlasma",
             "VPlas"
         ]
@@ -464,9 +530,10 @@ TermDefinitions = [
     {
         "name": "rest-of-body volume",
         "element_type": "parameter",
-        "recommended_id": "VRest",
         "description": "Volume of rest-of-body compartment.",
-        "synonyms": [
+        "synonyms": [],
+        "recommended_id": "VRest",
+        "common_ids": [
             "VRest",
             "VR"
         ]
@@ -474,9 +541,10 @@ TermDefinitions = [
     {
         "name": "skin volume",
         "element_type": "parameter",
-        "recommended_id": "VSkin",
         "description": "Volume of skin.",
-        "synonyms": [
+        "synonyms": [],
+        "recommended_id": "VSkin",
+        "common_ids": [
             "VSkin",
             "VSk"
         ]
@@ -484,18 +552,20 @@ TermDefinitions = [
     {
         "name": "stratum corneum volume",
         "element_type": "parameter",
-        "recommended_id": "VSC",
         "description": "Volume of stratum corneum.",
-        "synonyms": [
+        "synonyms": [],
+        "recommended_id": "VSC",
+        "common_ids": [
             "VSC"
         ]
     },
     {
         "name": "venous blood plasma volume",
         "element_type": "parameter",
-        "recommended_id": "VVen_Plas",
         "description": "Volume of blood plasma.",
-        "synonyms": [
+        "synonyms": [],
+        "recommended_id": "VVen_Plas",
+        "common_ids": [
             "VVen_Plas",
             "VVen_Plasma"
         ]
@@ -503,28 +573,31 @@ TermDefinitions = [
     {
         "name": "viable epidermis corneum volume",
         "element_type": "parameter",
-        "recommended_id": "VVE",
         "description": "Volume of viable epidermis.",
-        "synonyms": [
+        "synonyms": [],
+        "recommended_id": "VVE",
+        "common_ids": [
             "VVE"
         ]
     },
     # Parameters: chemical
     {
         "name": "molar weight",
-        "recommended_id": "MW",
         "element_type": "parameter",
         "description": "Molecular weight.",
-        "synonyms": [
+        "synonyms": [],
+        "recommended_id": "MW",
+        "common_ids": [
             "MW"
         ]
     },
     {
         "name": "logP",
         "element_type": "parameter",
-        "recommended_id": "logP",
         "description": "logP descriptor.",
-        "synonyms": [
+        "synonyms": [],
+        "recommended_id": "logP",
+        "common_ids": [
             "logP"
         ],
         "resources": [
@@ -538,9 +611,10 @@ TermDefinitions = [
     {
         "name": "partition coefficient fat/plasma",
         "element_type": "parameter",
-        "recommended_id": "PC_Fat_Plas",
         "description": "Partition coefficient fat/plasma.",
-        "synonyms": [
+        "synonyms": [],
+        "recommended_id": "PC_Fat_Plas",
+        "common_ids": [
             "PF",
             "PC_Fat_Plas",
             "PC_Fat_Plasma"
@@ -549,20 +623,22 @@ TermDefinitions = [
     {
         "name": "partition coefficient gut/plasma",
         "element_type": "parameter",
-        "recommended_id": "PC_Gut_Plas",
         "description": "Partition coefficient gut/plasma.",
-        "synonyms": [
+        "synonyms": [],
+        "recommended_id": "PC_Gut_Plas",
+        "common_ids": [
             "PG",
-            "PC_Git_Plas",
+            "PC_Gut_Plas",
             "PC_Gut_Plasma"
         ]
     },
     {
         "name": "partition coefficient kidney/plasma",
         "element_type": "parameter",
-        "recommended_id": "PC_Kid_Plas",
         "description": "Partition coefficient kidney/plasma.",
-        "synonyms": [
+        "synonyms": [],
+        "recommended_id": "PC_Kid_Plas",
+        "common_ids": [
             "PK",
             "PC_Kid_Plas",
             "PC_Kidney_Plasma"
@@ -571,9 +647,10 @@ TermDefinitions = [
     {
         "name": "partition coefficient liver/plasma",
         "element_type": "parameter",
-        "recommended_id": "PC_Liv_Plas",
         "description": "Partition coefficient liver/plasma.",
-        "synonyms": [
+        "synonyms": [],
+        "recommended_id": "PC_Liv_Plas",
+        "common_ids": [
             "PL",
             "PC_Liv_Plas",
             "PC_Liver_Plasma"
@@ -582,9 +659,10 @@ TermDefinitions = [
     {
         "name": "partition coefficient lung/plasma",
         "element_type": "parameter",
-        "recommended_id": "PC_Lun_Plas",
         "description": "Partition coefficient lung/plasma.",
-        "synonyms": [
+        "synonyms": [],
+        "recommended_id": "PC_Lun_Plas",
+        "common_ids": [
             "PLun",
             "PC_Lun_Plas",
             "PC_Lun_Plasma"
@@ -593,9 +671,10 @@ TermDefinitions = [
     {
         "name": "partition coefficient rest-of-body/plasma",
         "element_type": "parameter",
-        "recommended_id": "PC_Rest_Plas",
         "description": "Partition coefficient rest-of-body/plasma.",
-        "synonyms": [
+        "synonyms": [],
+        "recommended_id": "PC_Rest_Plas",
+        "common_ids": [
             "PR",
             "PC_Rest_Plas",
             "PC_Rest_Plasma"
@@ -604,9 +683,10 @@ TermDefinitions = [
     {
         "name": "partition coefficient skin/plasma",
         "element_type": "parameter",
-        "recommended_id": "PC_Skin_Plas",
         "description": "Partition coefficient skin/plasma.",
-        "synonyms": [
+        "synonyms": [],
+        "recommended_id": "PC_Skin_Plas",
+        "common_ids": [
             "PSk",
             "PC_Skin_Plas",
             "PC_Skin_Plasma"

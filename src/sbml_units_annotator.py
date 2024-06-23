@@ -35,6 +35,7 @@ class sbmlUnitsAnnotator:
         for index, row in df.iterrows():
             elementId = str(row["element_id"])
             if (elementId):
+                # If unit field is not empty, try set element unit
                 if (row["unit"] is not None):
                     self.setElementUnit(
                         document,
@@ -46,6 +47,7 @@ class sbmlUnitsAnnotator:
                 
                 if ("element_description" in row \
                     and row["element_description"] is not None):
+                    # If description field is not empty, try set element name
                     self.setElementName(
                         document,
                         row["element_id"],
@@ -54,22 +56,31 @@ class sbmlUnitsAnnotator:
                         True
                     )
 
-        # Annotate model terms if URI field is set
+        # If the annotations file contains an URI column, then try to add
+        # rdf annotations for model elements using SBMLUtils for records 
         if ('URI' in df.columns):
+            # Skip records with empty URI field
             df = df[df['URI'].notnull()]
             if (not 'pattern' in df.columns):
+                # If pattern column is missing, then use element id column
                 df['pattern'] = df['element_id'] 
             if (not 'annotation_type' in df.columns):
+                # If annotation type column is missing, then add with default value
                 df['annotation_type'] = 'rdf'
             if (not 'qualifier' in df.columns):
+                # If qualifier column is missing, then add with default value
                 df['qualifier'] = 'BQB_IS'
             if (not 'resource' in df.columns):
+                # If resource column is missing, then use URI column
                 df['resource'] = df['URI']
 
+            # Create list of annotation records
             entries = df.to_dict("records")
             annotations = []
             for entry in entries:
                 annotations.append(ExternalAnnotation(entry))
+
+            # Feed list of annotation records to annotation function of SBMLUtils
             annotate_sbml_doc(document, annotations)
 
         # Write SBML file
@@ -80,7 +91,7 @@ class sbmlUnitsAnnotator:
         """Find unit definition matching the provided string."""
         res = None
         for index, value in enumerate(UnitDefinitions):
-            if any(val.lower() == str.lower() for val in value['synonyms']):
+            if any(val.lower() == str.lower() for val in value['common_ids']):
                 res = value
                 break
         return res
@@ -131,6 +142,9 @@ class sbmlUnitsAnnotator:
             el.setName(name)
 
     def getOrAddUnitDefinition(self, doc, unitId, unitsDictionary):
+        """Tries to get the unit definition for the specified unit id from the SBML document.
+        The unit definition will be created and added to the document if it does not yet exist.
+        """
         if (unitId not in unitsDictionary):
             unitDef = self.findUnitDefinition(unitId)
             if (unitDef is None):

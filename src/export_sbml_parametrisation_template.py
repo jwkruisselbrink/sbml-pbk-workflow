@@ -7,10 +7,8 @@ import pandas as pd
 from unit_definitions import UnitDefinitions
 from term_definitions import TermDefinitions
 
-'''
-Creates a parametrisation template for the provided SBML file.
-'''
 def main():
+    """Creates a parametrisation template for the provided SBML file."""
     parser = argparse.ArgumentParser(description="Create a CSV file for a parametrisation of an SBML model.")
     parser.add_argument("sbml_file", help="Full path to the SBML file")
     parser.add_argument("-o", "--out", required=False, help="Output file")

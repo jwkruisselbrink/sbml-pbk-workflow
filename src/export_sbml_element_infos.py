@@ -7,10 +7,8 @@ import pandas as pd
 from unit_definitions import UnitDefinitions
 from term_definitions import TermDefinitions
 
-'''
-Creates an annotation template for the provided SBML file.
-'''
 def main():
+    """Creates an annotation template for the provided SBML file."""
     parser = argparse.ArgumentParser(description="Create a CSV file of the terms of an SBML model.")
     parser.add_argument("sbml_file", help="Full path to the SBML file")
     parser.add_argument("-o", "--out", required=False, help="Output file")
@@ -45,32 +43,31 @@ def main():
         print(f'{f_out} already exists, use -f to force conversion')
 
 def getUnitString(element):
+    """Tries to get the (UCUM formated) unit string of the specified element."""
     unit = ls.UnitDefinition.printUnits(element.getDerivedUnitDefinition())
     unit = element.getUnits()
     if (unit):
         for index, value in enumerate(UnitDefinitions):
             if unit.lower() == value['id'].lower() \
-                or any(val.lower() == unit.lower() for val in value['synonyms']):
-                return value['UCUM']
+                or any(val.lower() == unit.lower() for val in value['common_ids']):
+                return value['UCUM'] if value['UCUM'] else value['id']
     return ""
 
 def getResourceDefinition(element, element_type):
-    '''
-    Tries to find a resource description for the specified element.
-    '''
+    """Tries to find a resource definition for the specified element."""
     element_id = element.getId()
     for index, value in enumerate(TermDefinitions):
         if value['element_type'] == element_type:
             if 'recommended_id' in value.keys() \
                 and element_id.lower() == value['recommended_id'].lower():
                 return value
-            elif 'synonyms' in value.keys() \
-                and any(element_id.lower() == val.lower() for val in value['synonyms']):
+            elif 'common_ids' in value.keys() \
+                and any(element_id.lower() == val.lower() for val in value['common_ids']):
                 return value
     return None
 
-# Helper function to extract is-a resource URI
 def getTerm(element):
+    """Helper function to extract is-a resource URI."""
     cvTerms = element.getCVTerms()
     if cvTerms:
         # Check if there already is an annotation for the element
