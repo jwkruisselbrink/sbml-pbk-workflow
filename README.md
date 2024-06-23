@@ -6,9 +6,11 @@ GitHub workflow for creation of annotated SBML files from Antimony PBK model imp
 
 Adding the SBML PBK workflow to your GitHub repository requires the following steps:
 
-1. Set the contents-permission of the default GITHUB_TOKEN to true. This is required for pushing new commits to the repository.
+1. The Antimony model implementation should be placed in a subfolder *model/* in the repository. In this folder, both the Antimony model implementation and the annotations CSV file should be placed. The annotations file should have the same file base name as the Antimony file, but with extension *.annotations.csv*. The repository should have the two files *model/[MODEL_NAME].ant* and *model/[MODEL_NAME].annotations.csv*
 
-2. Create a file named 'build.yml' in the `.gihub/workflows` folder 
+2. Set the contents-permission of the default GITHUB_TOKEN to true. This is required for pushing new commits to the repository.
+
+3. Create a file named 'build.yml' in the `.gihub/workflows` folder 
 
 ```yaml
 name: Create and annotate SBML
@@ -18,7 +20,7 @@ jobs:
   create-and-annotate-sbml:
     uses: jwkruisselbrink/sbml-pbk-workflow/.github/workflows/build.yml@main
     with:
-      model-name: [YOUR_MODEL]
+      model-name: [MODEL_NAME]
     permissions:
       contents: write
     secrets: inherit
