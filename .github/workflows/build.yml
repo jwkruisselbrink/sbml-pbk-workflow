@@ -45,7 +45,7 @@ jobs:
       - name: Annotate SBML
         id: annotate-sbml
         run: |
-          (python sbml-pbk-workflow/src/annotate_sbml.py model/${{inputs.model-name}}.sbml model/${{inputs.model-name}}.annotations.csv model/${{inputs.model-name}}.sbml) | tee log/annotate-terms.log
+          (python sbml-pbk-workflow/src/annotate_sbml.py -f model/${{inputs.model-name}}.sbml model/${{inputs.model-name}}.annotations.csv model/${{inputs.model-name}}.sbml) | tee log/annotate-terms.log
         shell: bash
 
       - name: Validate SBML
