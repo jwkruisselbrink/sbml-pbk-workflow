@@ -53,6 +53,22 @@ TermDefinitions = [
         ]
     },
     {
+        "name": "alveolar air",
+        "element_type": "compartment",
+        "description": "Alveolar air compartment.",
+        "synonyms": [],
+        "recommended_id": "Air",
+        "common_ids": [
+            "Air",
+        ],
+        "resources": [
+            {
+                "qualifier": "bqbiol:is",
+                "URI": "http://purl.obolibrary.org/obo/NCIT_C150891"
+            }
+        ]
+    },
+    {
         "name": "arterial blood",
         "element_type": "compartment",
         "description": "Arterial blood compartment.",
