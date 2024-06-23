@@ -45,15 +45,15 @@ class sbmlModelAnnotator:
                         unitsDictionary
                     )
                 
-                if ("element_description" in row \
-                    and row["element_description"] is not None
+                if ("element_name" in row \
+                    and row["element_name"] is not None
                     and row["sbml_type"] != "document"):
                     # If description field is not empty, try set element name
                     self.setElementName(
                         document,
                         row["element_id"],
                         row["sbml_type"],
-                        row["element_description"],
+                        row["element_name"],
                         True
                     )
 
