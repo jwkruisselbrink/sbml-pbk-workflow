@@ -91,7 +91,7 @@ class sbmlUnitsAnnotator:
         """Find unit definition matching the provided string."""
         res = None
         for index, value in enumerate(UnitDefinitions):
-            if any(val.lower() == str.lower() for val in value['common_ids']):
+            if any(val.lower() == str.lower() for val in value['synonyms']):
                 res = value
                 break
         return res
