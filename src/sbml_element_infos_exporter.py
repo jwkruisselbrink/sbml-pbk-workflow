@@ -7,6 +7,8 @@ class sbmlElementInfosExporter:
 
     def exportTerms(self, model):
         dt = []
+        dt_model = self.getDocumentTerms(model)
+        dt.extend(dt_model)
         dt_compartments = self.getCompartmentTerms(model)
         dt.extend(dt_compartments)
         dt_species = self.getSpeciesTerms(model)
@@ -18,6 +20,38 @@ class sbmlElementInfosExporter:
             columns=["element_id", "sbml_type", "element_description", "unit", "URI", "description", "remark"]
         )
         return terms
+    
+    def getDocumentTerms(self, model):
+        element_type="document"
+        dt = []
+        dt.append([
+            "substanceUnits",
+            element_type,
+            "model substances unit",
+            self.getUnitString(model.getSubstanceUnits()),
+            "",
+            "Model substances unit.",
+            ""
+        ])
+        dt.append([
+            "timeUnits",
+            element_type,
+            "model time unit",
+            self.getUnitString(model.getTimeUnits()),
+            "",
+            "Model time unit.",
+            ""
+        ])
+        dt.append([
+            "volumeUnits",
+            element_type,
+            "model volume unit",
+            self.getUnitString(model.getVolumeUnits()),
+            "",
+            "Model volume unit.",
+            ""
+        ])
+        return dt
 
     def getCompartmentTerms(self, model):
         element_type="compartment"
@@ -43,7 +77,7 @@ class sbmlElementInfosExporter:
                 element.getId(),
                 element_type,
                 name,
-                self.getUnitString(element),
+                self.getUnitString(element.getUnits()),
                 uri,
                 description,
                 ""
@@ -74,7 +108,7 @@ class sbmlElementInfosExporter:
                 element.getId(),
                 element_type,
                 name,
-                self.getUnitString(element),
+                self.getUnitString(element.getUnits()),
                 uri,
                 description,
                 ""
@@ -105,7 +139,7 @@ class sbmlElementInfosExporter:
                 element.getId(),
                 element_type,
                 name,
-                self.getUnitString(element),
+                self.getUnitString(element.getUnits()),
                 uri,
                 description,
                 ""
@@ -125,10 +159,8 @@ class sbmlElementInfosExporter:
                     return value
         return None
 
-    def getUnitString(self, element):
+    def getUnitString(self, unit):
         """Tries to get the (UCUM formated) unit string of the specified element."""
-        unit = ls.UnitDefinition.printUnits(element.getDerivedUnitDefinition())
-        unit = element.getUnits()
         if (unit):
             for index, value in enumerate(UnitDefinitions):
                 if unit.lower() == value['id'].lower() \
