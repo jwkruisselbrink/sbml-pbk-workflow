@@ -239,6 +239,28 @@ TermDefinitions = [
         ]
     },
     {
+        "name": "skin exposed",
+        "element_type": "compartment",
+        "description": "Exposed skin compartment.",
+        "synonyms": [],
+        "recommended_id": "Skin_e",
+        "common_ids": [
+            "Skin_e"
+        ],
+        "resources": []
+    },
+    {
+        "name": "skin unexposed",
+        "element_type": "compartment",
+        "description": "Unexposed skin compartment.",
+        "synonyms": [],
+        "recommended_id": "Skin_u",
+        "common_ids": [
+            "Skin_u"
+        ],
+        "resources": []
+    },
+    {
         "name": "stratum corneum",
         "element_type": "compartment",
         "description": "Stratum corneum compartment.",

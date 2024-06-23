@@ -107,7 +107,7 @@ def getCompartmentTerms(model):
         # Try to find resource definition for element
         resource = getResourceDefinition(element, element_type)
         if (resource is not None):
-            if 'resources' in resource.keys():
+            if 'resources' in resource.keys() and len(resource['resources']) > 0:
                 uri = resource['resources'][0]['URI']
             if 'name' in resource.keys():
                 name = resource['name']
