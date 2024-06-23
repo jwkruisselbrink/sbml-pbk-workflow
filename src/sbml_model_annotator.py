@@ -7,7 +7,7 @@ from typing import List
 
 logger = get_logger(__name__)
 
-class sbmlUnitsAnnotator:
+class sbmlModelAnnotator:
 
     def annotateUnits(
         self,

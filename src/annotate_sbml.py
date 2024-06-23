@@ -2,10 +2,10 @@ import sys
 import argparse
 from pathlib import Path
 import traceback
-import sbml_units_annotator as ua
+import sbml_model_annotator as ma
 
 def main():
-    parser = argparse.ArgumentParser(description="Annotate the units of the SBML file with the specifications of the annotations file")
+    parser = argparse.ArgumentParser(description="Annotate the SBML model file with the specifications of the annotations file.")
     parser.add_argument("sbml_file", help="Full path to SBML file")
     parser.add_argument("annotations_file", help="Full path to SBML file")
     parser.add_argument("out_file", help="Output file")
@@ -23,7 +23,7 @@ def main():
             sbml_file = f_in
             annotations_file = f_ann
             out_file = f_out
-            annotator = ua.sbmlUnitsAnnotator()
+            annotator = ma.sbmlModelAnnotator()
             annotator.annotateUnits(sbml_file, annotations_file, str(out_file))
         else:
             print(f'[{f_out}] already exists, use -f to force conversion')

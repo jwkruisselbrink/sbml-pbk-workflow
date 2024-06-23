@@ -42,16 +42,10 @@ jobs:
           python sbml-pbk-workflow/src/ant2sbml.py -f model/${{inputs.model-name}}.ant
         shell: bash
 
-      - name: Annotate SBML terms
+      - name: Annotate SBML
         id: annotate-sbml
         run: |
-          (python sbml-pbk-workflow/src/annotate_sbml_terms.py model/${{inputs.model-name}}.sbml model/${{inputs.model-name}}.terms.csv model/${{inputs.model-name}}.sbml) | tee log/annotate-terms.log
-        shell: bash
-
-      - name: Annotate SBML units
-        id: annotate-sbml-units
-        run: |
-          (python sbml-pbk-workflow/src/annotate_sbml_units.py model/${{inputs.model-name}}.sbml model/${{inputs.model-name}}.units.csv model/${{inputs.model-name}}.sbml -f) | tee log/annotate-units.log
+          (python sbml-pbk-workflow/src/annotate_sbml.py model/${{inputs.model-name}}.sbml model/${{inputs.model-name}}.annotations.csv model/${{inputs.model-name}}.sbml) | tee log/annotate-terms.log
         shell: bash
 
       - name: Validate SBML
