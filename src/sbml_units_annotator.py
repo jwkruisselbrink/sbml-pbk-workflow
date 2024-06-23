@@ -46,7 +46,8 @@ class sbmlUnitsAnnotator:
                     )
                 
                 if ("element_description" in row \
-                    and row["element_description"] is not None):
+                    and row["element_description"] is not None
+                    and row["sbml_type"] != "document"):
                     # If description field is not empty, try set element name
                     self.setElementName(
                         document,
