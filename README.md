@@ -1,6 +1,6 @@
 # SBML PBK workflow
 
-GitHub workflow for creation of annotated SBML files from Antimony PBK model implementations combined with annotations provided in CSV file annotations.
+[GitHub workflow](https://docs.github.com/en/actions/using-workflows) for creation of annotated SBML files from Antimony PBK model implementations combined with annotations provided in CSV file annotations.
 
 ## Usage
 
@@ -36,7 +36,11 @@ Besides some administrative steps, the workflow contains the following main buil
 4. Store the generated SBML file and log files in the build artifacts.
 5. Add the generated SBML file to the repository.
 
-## SBML model annotation
+### SBML conversion
+
+The python script [ant2sbml.py](src/ant2sbml.py) is used to automatically create an SBML file from the Antimony file. For this, it uses the Python [Tellurium](https://tellurium.analogmachine.org/) package.
+
+### SBML model annotation
 
 In the model annotation step, the generated SBML file is annotated using the terms and units specified in a CSV file. The model annotation script is based on, and uses parts of, the annotation script of [SBMLutils](https://sbmlutils.readthedocs.io/en/latest/notebooks/sbml_annotator.html#Annotate-existing-model). However, in addition to annotation of the model using RDF triples, it also sets the model units and element names. The structure of the CSV file is also based on the external annotations file format of [SBMLutils](https://sbmlutils.readthedocs.io/en/latest/notebooks/sbml_annotator.html#Annotate-existing-model), but again with some changes to also allow for annotation of units.
 
@@ -53,3 +57,11 @@ In the model annotation step, the generated SBML file is annotated using the ter
 For specification of the SBML model global substance unit, time unit, and volume unit, use **element_id** values of *substanceUnits*, *timeUnits*, and *volumeUnits* with **sbml_type** *document*.
 
 For an example of an annotations file, see the [annotations file](https://github.com/rivm-syso/euromix-to-sbml/blob/main/model/euromix.annotations.csv) of the SBML EuroMix PBK model re-implementation.
+
+### SBML validation
+
+Automatic validation can be included to check for model errors, model consistency, consitency of units, and also on more PBK-model specific aspects (such as mass balance). The script [validate_sbml.py](src/validate_sbml.py) runs validation checks on the SBML file. This is a first version in which some rudimentary file and consistency checks are performed. This first version is inspired by the [example](https://synonym.caltech.edu/software/libsbml/5.18.0/docs/formatted/python-api/validate_s_b_m_l_8py-example.html) presented in the libSBML documentation.
+
+## Example
+
+For an example of use of this workflow, see the [EuroMix PBK SBML re-implementation](https://github.com/rivm-syso/euromix-to-sbml) 
