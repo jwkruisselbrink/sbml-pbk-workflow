@@ -461,6 +461,47 @@ TermDefinitions = [
             "QCC"
         ]
     },
+    {
+        "name": "alveolar ventilation rate",
+        "element_type": "parameter",
+        "description": "Alveolar ventilation rate.",
+        "synonyms": [],
+        "recommended_id": "Falv",
+        "common_ids": [
+            "Falv"
+        ]
+    },
+    {
+        "name": "thickness stratum corneum",
+        "element_type": "parameter",
+        "description": "Thickness stratum corneum.",
+        "synonyms": [],
+        "recommended_id": "Height_sc",
+        "common_ids": [
+            "Height_sc"
+        ]
+    },
+    {
+        "name": "thickness viable epidermis",
+        "element_type": "parameter",
+        "description": "Thickness viable epidermis.",
+        "synonyms": [],
+        "recommended_id": "Height_ve",
+        "common_ids": [
+            "Height_ve",
+            "Height_vs"
+        ]
+    },
+    {
+        "name": "tissue density",
+        "element_type": "parameter",
+        "description": "Density of the tissues.",
+        "synonyms": [],
+        "recommended_id": "rho",
+        "common_ids": [
+            "rho"
+        ]
+    },
     # Parameters: physiological - compartment volumes
     {
         "name": "alveolar volume",
@@ -713,5 +754,44 @@ TermDefinitions = [
             "PC_Skin_Plas",
             "PC_Skin_Plasma"
         ]
+    },
+    # Chemical - other
+    {
+        "name": "hepatic clearance rate",
+        "element_type": "parameter",
+        "description": "Hepatic (or metabolic) clearnace rate.",
+        "synonyms": [],
+        "recommended_id": "CLH",
+        "common_ids": [
+            "CLH"
+        ],
+        "resources": [
+            {
+                "qualifier": "bqbiol:is",
+                "URI": "http://purl.obolibrary.org/obo/OMIT_0009720"
+            }
+        ]
+    },
+    {
+        "name": "unbound fraction in blood",
+        "element_type": "parameter",
+        "description": "Unbound fraction in blood.",
+        "synonyms": [],
+        "recommended_id": "fub",
+        "common_ids": [
+            "fub"
+        ],
+        "resources": []
+    },
+    {
+        "name": "oral absorption rate constant",
+        "element_type": "parameter",
+        "description": "Oral 1st order absorption rate constant.",
+        "synonyms": [],
+        "recommended_id": "kGut",
+        "common_ids": [
+            "kGut"
+        ],
+        "resources": []
     }
 ]
