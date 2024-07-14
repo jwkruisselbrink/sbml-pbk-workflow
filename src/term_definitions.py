@@ -48,7 +48,7 @@ TermDefinitions = [
         "resources": [
             {
                 "qualifier": "bqbiol:is",
-                "URI": "uberon/UBERON:0001013"
+                "URI": "http://purl.obolibrary.org/obo/UBERON:0001013"
             }
         ]
     },
@@ -62,6 +62,10 @@ TermDefinitions = [
             "Air",
         ],
         "resources": [
+            {
+                "qualifier": "bqbiol:is",
+                "URI": "http://purl.obolibrary.org/obo/PBPKO_00458"
+            },
             {
                 "qualifier": "bqbiol:is",
                 "URI": "http://purl.obolibrary.org/obo/NCIT_C150891"
@@ -80,7 +84,11 @@ TermDefinitions = [
         "resources": [
             {
                 "qualifier": "bqbiol:is",
-                "URI": "uberon/UBERON:0013755"
+                "URI": "http://purl.obolibrary.org/obo/PBPKO_00462"
+            },
+            {
+                "qualifier": "bqbiol:is",
+                "URI": "http://purl.obolibrary.org/obo/UBERON:0013755"
             }
         ]
     },
@@ -107,7 +115,7 @@ TermDefinitions = [
         "resources": [
             {
                 "qualifier": "bqbiol:is",
-                "URI": "uberon/UBERON:0000178"
+                "URI": "http://purl.obolibrary.org/obo/UBERON:0000178"
             }
         ]
     },
@@ -124,7 +132,7 @@ TermDefinitions = [
         "resources": [
             {
                 "qualifier": "bqbiol:is",
-                "URI": "uberon/UBERON:0001969"
+                "URI": "http://purl.obolibrary.org/obo/UBERON:0001969"
             }
         ]
     },
@@ -151,7 +159,7 @@ TermDefinitions = [
         "resources": [
             {
                 "qualifier": "bqbiol:is",
-                "URI": "uberon/UBERON:0001555"
+                "URI": "http://purl.obolibrary.org/obo/UBERON:0001555"
             }
         ]
     },
@@ -168,7 +176,7 @@ TermDefinitions = [
         "resources": [
             {
                 "qualifier": "bqbiol:is",
-                "URI": "uberon/UBERON:0002113"
+                "URI": "http://purl.obolibrary.org/obo/UBERON:0002113"
             }
         ]
     },
@@ -185,7 +193,7 @@ TermDefinitions = [
         "resources": [
             {
                 "qualifier": "bqbiol:is",
-                "URI": "uberon/UBERON:0002107"
+                "URI": "http://purl.obolibrary.org/obo/UBERON:0002107"
             }
         ]
     },
@@ -202,7 +210,7 @@ TermDefinitions = [
         "resources": [
             {
                 "qualifier": "bqbiol:is",
-                "URI": "uberon/UBERON:0000479"
+                "URI": "http://purl.obolibrary.org/obo/UBERON:0000479"
             }
         ]
     },
@@ -214,6 +222,12 @@ TermDefinitions = [
         "recommended_id": "Poor",
         "common_ids": [
             "Poor"
+        ],
+        "resources": [
+            {
+                "qualifier": "bqbiol:is",
+                "URI": "http://purl.obolibrary.org/obo/PBPKO_00465"
+            }
         ]
     },
     {
@@ -226,6 +240,12 @@ TermDefinitions = [
             "rest-of-body",
             "rest",
             "periphery"
+        ],
+        "resources": [
+            {
+                "qualifier": "bqbiol:is",
+                "URI": "http://purl.obolibrary.org/obo/PBPKO_00460"
+            }
         ]
     },
     {
@@ -236,6 +256,12 @@ TermDefinitions = [
         "recommended_id": "Rich",
         "common_ids": [
             "Rich"
+        ],
+        "resources": [
+            {
+                "qualifier": "bqbiol:is",
+                "URI": "http://purl.obolibrary.org/obo/PBPKO_00464"
+            }
         ]
     },
     {
@@ -250,7 +276,7 @@ TermDefinitions = [
         "resources": [
             {
                 "qualifier": "bqbiol:is",
-                "URI": "uberon/UBERON:0002097"
+                "URI": "http://purl.obolibrary.org/obo/UBERON:0002097"
             }
         ]
     },
@@ -289,7 +315,7 @@ TermDefinitions = [
         "resources": [
             {
                 "qualifier": "bqbiol:is",
-                "URI": "uberon/UBERON:0002027"
+                "URI": "http://purl.obolibrary.org/obo/UBERON:0002027"
             }
         ]
     },
@@ -302,6 +328,12 @@ TermDefinitions = [
         "common_ids": [
             "SC_e",
             "Skin_sc_e"
+        ],
+        "resources": [
+            {
+                "qualifier": "bqbiol:is",
+                "URI": "http://purl.obolibrary.org/obo/PBPKO_00469"
+            }
         ]
     },
     {
@@ -313,6 +345,12 @@ TermDefinitions = [
         "common_ids": [
             "SC_u",
             "Skin_sc_u"
+        ],
+        "resources": [
+            {
+                "qualifier": "bqbiol:is",
+                "URI": "http://purl.obolibrary.org/obo/PBPKO_00468"
+            }
         ]
     },
     {
@@ -327,7 +365,7 @@ TermDefinitions = [
         "resources": [
             {
                 "qualifier": "bqbiol:is",
-                "URI": "uberon/UBERON:0001088"
+                "URI": "http://purl.obolibrary.org/obo/UBERON:0001088"
             }
         ]
     },
@@ -343,7 +381,11 @@ TermDefinitions = [
         "resources": [
             {
                 "qualifier": "bqbiol:is",
-                "URI": "uberon/UBERON:0013756"
+                "URI": "http://purl.obolibrary.org/obo/PBPKO_00463"
+            },
+            {
+                "qualifier": "bqbiol:is",
+                "URI": "http://purl.obolibrary.org/obo/UBERON:0013756"
             }
         ]
     },
@@ -383,6 +425,12 @@ TermDefinitions = [
         "common_ids": [
             "VE_u",
             "Skin_ve_u"
+        ],
+        "resources": [
+            {
+                "qualifier": "bqbiol:is",
+                "URI": "http://purl.obolibrary.org/obo/PBPKO_00467"
+            }
         ]
     },
     {
@@ -394,6 +442,12 @@ TermDefinitions = [
         "common_ids": [
             "VE_u",
             "Skin_ve_u"
+        ],
+        "resources": [
+            {
+                "qualifier": "bqbiol:is",
+                "URI": "http://purl.obolibrary.org/obo/PBPKO_00466"
+            }
         ]
     },
     # Species terms
@@ -423,7 +477,50 @@ TermDefinitions = [
         "resources": [
             {
                 "qualifier": "bqbiol:is",
-                "URI": "sbo/SBO:0000247"
+                "URI": "http://identifiers.org/SBO:0000247"
+            }
+        ]
+    },
+    # Parameters: main
+    {
+        "name": "physiological parameter",
+        "element_type": "parameter",
+        "description": "Pyhisiological parameter.",
+        "synonyms": [],
+        "common_ids": [
+        ],
+        "resources": [
+            {
+                "qualifier": "bqbiol:is",
+                "URI": "http://purl.obolibrary.org/obo/PBPKO_00007"
+            }
+        ]
+    },
+    {
+        "name": "physicochemical parameter",
+        "element_type": "parameter",
+        "description": "Physicochemical parameter.",
+        "synonyms": [],
+        "common_ids": [
+        ],
+        "resources": [
+            {
+                "qualifier": "bqbiol:is",
+                "URI": "http://purl.obolibrary.org/obo/PBPKO_00128"
+            }
+        ]
+    },
+    {
+        "name": "metabolic parameter",
+        "element_type": "parameter",
+        "description": "Metabolic parameter.",
+        "synonyms": [],
+        "common_ids": [
+        ],
+        "resources": [
+            {
+                "qualifier": "bqbiol:is",
+                "URI": "http://purl.obolibrary.org/obo/PBPKO_00190"
             }
         ]
     },
@@ -441,6 +538,10 @@ TermDefinitions = [
             "body weight"
         ],
         "resources": [
+            {
+                "qualifier": "bqbiol:is",
+                "URI": "http://purl.obolibrary.org/obo/PBPKO_00009"
+            },
             {
                 "qualifier": "bqbiol:is",
                 "URI": "http://purl.obolibrary.org/obo/NCIT_C81328"
@@ -461,6 +562,10 @@ TermDefinitions = [
             "BSA"
         ],
         "resources": [
+            {
+                "qualifier": "bqbiol:is",
+                "URI": "http://purl.obolibrary.org/obo/PBPKO_00011"
+            },
             {
                 "qualifier": "bqbiol:is",
                 "URI": "http://purl.obolibrary.org/obo/NCIT_C25157"
@@ -687,6 +792,20 @@ TermDefinitions = [
         ]
     },
     # Parameters: chemical - partition coefficients
+    {
+        "name": "partition coefficient",
+        "element_type": "parameter",
+        "description": "Partition coefficient.",
+        "synonyms": [],
+        "common_ids": [
+        ],
+        "resources": [
+            {
+                "qualifier": "bqbiol:is",
+                "URI": "http://purl.obolibrary.org/obo/PBPKO_00167"
+            }
+        ]
+    },
     {
         "name": "partition coefficient fat/plasma",
         "element_type": "parameter",
