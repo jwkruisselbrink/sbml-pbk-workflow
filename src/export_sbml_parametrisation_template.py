@@ -44,7 +44,7 @@ def exportParametrisationsTemplate(model):
     dt = []
     for i in range(0,model.getNumParameters()):
         element = model.getParameter(i)
-        if (element.isSetConstant()):
+        if (element.getConstant()):
             dt.append([
                 element.getId(),
                 pd.NA,
