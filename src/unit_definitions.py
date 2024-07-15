@@ -476,6 +476,19 @@ UnitDefinitions = [
     },
     # Area units
     {
+        "id" : "CentiM2",
+        "qudt" : "CentiM2",
+        "UCUM" : "cm2",
+        "synonyms" : [
+            "cm_square",
+            "cm^2",
+            "cm2"
+        ],
+        "units": [
+            { "kind": ls.UNIT_KIND_METRE, "exponent": 2, "multiplier": 1, "scale": -2 },
+        ]
+    },
+    {
         "id" : "DeciM2",
         "qudt" : "DeciM2",
         "UCUM" : "dm2",
@@ -490,17 +503,6 @@ UnitDefinitions = [
     },
     # Length units
     {
-        "id" : "DeciM",
-        "qudt" : "DeciM",
-        "UCUM" : "dm",
-        "synonyms" : [
-            "dm"
-        ],
-        "units": [
-            { "kind": ls.UNIT_KIND_METRE, "exponent": 1, "multiplier": 1, "scale": -1 },
-        ]
-    },
-    {
         "id" : "CentiM",
         "qudt" : "CentiM",
         "UCUM" : "cm",
@@ -509,6 +511,17 @@ UnitDefinitions = [
         ],
         "units": [
             { "kind": ls.UNIT_KIND_METRE, "exponent": 1, "multiplier": 1, "scale": -2 },
+        ]
+    },
+    {
+        "id" : "DeciM",
+        "qudt" : "DeciM",
+        "UCUM" : "dm",
+        "synonyms" : [
+            "dm"
+        ],
+        "units": [
+            { "kind": ls.UNIT_KIND_METRE, "exponent": 1, "multiplier": 1, "scale": -1 },
         ]
     }
 ]
