@@ -63,7 +63,7 @@ TermDefinitions = [
         ],
         "resources": [
             {
-                "qualifier": "bqbiol:is",
+                "qualifier": "bqmodel:is",
                 "URI": "http://purl.obolibrary.org/obo/PBPKO_00458"
             },
             {
@@ -83,7 +83,7 @@ TermDefinitions = [
         ],
         "resources": [
             {
-                "qualifier": "bqbiol:is",
+                "qualifier": "bqmodel:is",
                 "URI": "http://purl.obolibrary.org/obo/PBPKO_00462"
             },
             {
@@ -225,7 +225,7 @@ TermDefinitions = [
         ],
         "resources": [
             {
-                "qualifier": "bqbiol:is",
+                "qualifier": "bqmodel:is",
                 "URI": "http://purl.obolibrary.org/obo/PBPKO_00465"
             }
         ]
@@ -243,7 +243,7 @@ TermDefinitions = [
         ],
         "resources": [
             {
-                "qualifier": "bqbiol:is",
+                "qualifier": "bqmodel:is",
                 "URI": "http://purl.obolibrary.org/obo/PBPKO_00460"
             }
         ]
@@ -259,7 +259,7 @@ TermDefinitions = [
         ],
         "resources": [
             {
-                "qualifier": "bqbiol:is",
+                "qualifier": "bqmodel:is",
                 "URI": "http://purl.obolibrary.org/obo/PBPKO_00464"
             }
         ]
@@ -331,7 +331,7 @@ TermDefinitions = [
         ],
         "resources": [
             {
-                "qualifier": "bqbiol:is",
+                "qualifier": "bqmodel:is",
                 "URI": "http://purl.obolibrary.org/obo/PBPKO_00469"
             }
         ]
@@ -348,7 +348,7 @@ TermDefinitions = [
         ],
         "resources": [
             {
-                "qualifier": "bqbiol:is",
+                "qualifier": "bqmodel:is",
                 "URI": "http://purl.obolibrary.org/obo/PBPKO_00468"
             }
         ]
@@ -380,7 +380,7 @@ TermDefinitions = [
         ],
         "resources": [
             {
-                "qualifier": "bqbiol:is",
+                "qualifier": "bqmodel:is",
                 "URI": "http://purl.obolibrary.org/obo/PBPKO_00463"
             },
             {
@@ -428,7 +428,7 @@ TermDefinitions = [
         ],
         "resources": [
             {
-                "qualifier": "bqbiol:is",
+                "qualifier": "bqmodel:is",
                 "URI": "http://purl.obolibrary.org/obo/PBPKO_00467"
             }
         ]
@@ -445,7 +445,7 @@ TermDefinitions = [
         ],
         "resources": [
             {
-                "qualifier": "bqbiol:is",
+                "qualifier": "bqmodel:is",
                 "URI": "http://purl.obolibrary.org/obo/PBPKO_00466"
             }
         ]
@@ -491,7 +491,7 @@ TermDefinitions = [
         ],
         "resources": [
             {
-                "qualifier": "bqbiol:is",
+                "qualifier": "bqmodel:is",
                 "URI": "http://purl.obolibrary.org/obo/PBPKO_00007"
             }
         ]
@@ -505,7 +505,7 @@ TermDefinitions = [
         ],
         "resources": [
             {
-                "qualifier": "bqbiol:is",
+                "qualifier": "bqmodel:is",
                 "URI": "http://purl.obolibrary.org/obo/PBPKO_00128"
             }
         ]
@@ -519,7 +519,7 @@ TermDefinitions = [
         ],
         "resources": [
             {
-                "qualifier": "bqbiol:is",
+                "qualifier": "bqmodel:is",
                 "URI": "http://purl.obolibrary.org/obo/PBPKO_00190"
             }
         ]

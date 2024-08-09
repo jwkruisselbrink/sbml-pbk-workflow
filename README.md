@@ -62,6 +62,10 @@ For an example of an annotations file, see the [annotations file](https://github
 
 Automatic validation can be included to check for model errors, model consistency, consitency of units, and also on more PBK-model specific aspects (such as mass balance). The script [validate_sbml.py](src/validate_sbml.py) runs validation checks on the SBML file. This is a first version in which some rudimentary file and consistency checks are performed. This first version is inspired by the [example](https://synonym.caltech.edu/software/libsbml/5.18.0/docs/formatted/python-api/validate_s_b_m_l_8py-example.html) presented in the libSBML documentation.
 
+- Every compartment should have a BQM_IS annotation linking associating the compartment with a known compartment of the PBPK ontology.
+- Every parameter should have a BQM_IS annotation linking associating the compartment with a known parameter of the PBPK ontology.
+- Pyhisical compartments should have a BQB_IS annotation linking associating the compartment with a biological entity (organ, tissue, body fluid) of the UBERON ontology.
+
 ## Example
 
 For an example of use of this workflow, see the [EuroMix PBK SBML re-implementation](https://github.com/rivm-syso/euromix-to-sbml).

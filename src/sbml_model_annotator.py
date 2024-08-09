@@ -3,7 +3,6 @@ import numpy as np
 from sbmlutils.metadata.annotator import ModelAnnotator, ExternalAnnotation, annotate_sbml_doc
 from sbmlutils.log import get_logger
 from unit_definitions import UnitDefinitions
-from typing import List
 
 logger = get_logger(__name__)
 
