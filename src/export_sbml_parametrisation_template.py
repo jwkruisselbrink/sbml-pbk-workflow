@@ -1,9 +1,9 @@
 import sys
 import argparse
 import libsbml as ls
-from pathlib import Path
 import traceback
-import pandas as pd
+from pathlib import Path
+from sbmlpbkutils import ParametrisationsTemplateGenerator
 
 def main():
     """Creates a parametrisation template for the provided SBML file."""
@@ -31,7 +31,8 @@ def main():
         sys.exit(1)
 
     # Create terms datatable
-    df = exportParametrisationsTemplate(model)
+    templateGenerator = ParametrisationsTemplateGenerator()
+    df = templateGenerator.generate(model)
 
     # Write data table to csv file
     if not f_out.exists() or args.force:
@@ -39,24 +40,6 @@ def main():
         print(f'{f_in} converted to {f_out}')
     else:
         print(f'{f_out} already exists, use -f to force conversion')
-
-def exportParametrisationsTemplate(model):
-    dt = []
-    for i in range(0,model.getNumParameters()):
-        element = model.getParameter(i)
-        if (element.getConstant()):
-            dt.append([
-                element.getId(),
-                pd.NA,
-                ""
-            ])
-
-    terms = pd.DataFrame(
-        dt,
-        columns=["element_id", "value", "reference"]
-    )
-    print(terms)
-    return terms
 
 if __name__ == "__main__":
     main()

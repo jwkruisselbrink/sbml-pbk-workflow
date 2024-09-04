@@ -1,7 +1,7 @@
 import sys
 import argparse
-import sbml_validator as sv
 from pathlib import Path
+from sbmlpbkutils import PbkModelValidator
 
 def main (args):
     """usage: validateSBML.py inputfile
@@ -14,7 +14,7 @@ def main (args):
     if not f_in.is_file():
         raise FileNotFoundError(f'File {f_in} does not exist.')
 
-    validator = sv.sbmlValidator(True)
+    validator = PbkModelValidator(True)
     validator.validate(f_in)
 
 if __name__ == '__main__':

@@ -1,9 +1,9 @@
 import sys
 import argparse
 import libsbml as ls
-from pathlib import Path
 import traceback
-from sbml_element_infos_exporter import sbmlElementInfosExporter
+from pathlib import Path
+from sbmlpbkutils import AnnotationsTemplateGenerator
 
 def main():
     """Creates an annotation template for the provided SBML file."""
@@ -31,8 +31,8 @@ def main():
         sys.exit(1)
 
     # Create terms datatable
-    infosExporter = sbmlElementInfosExporter()
-    df = infosExporter.exportTerms(model)
+    annotationsTemplateGenerator = AnnotationsTemplateGenerator()
+    df = annotationsTemplateGenerator.generate(model)
 
     # Write data table to csv file
     if not f_out.exists() or args.force:

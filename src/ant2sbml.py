@@ -1,8 +1,8 @@
 import sys
 import argparse
 import tellurium as te
-from pathlib import Path
 import traceback
+from pathlib import Path
 
 def main():
     parser = argparse.ArgumentParser(description="Convert Antimony file to SBML")
