@@ -2,5 +2,5 @@ antimony>=2.15.0
 python-libsbml>=5.20.2
 sbmlutils>=0.9.0
 tellurium>=2.2.10
-numpy>=2.1.0
+numpy>=1.26.4
 sbmlpbkutils @ git+https://github.com/jwkruisselbrink/sbml-pbk-utils.git@v0.1.0

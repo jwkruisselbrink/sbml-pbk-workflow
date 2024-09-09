@@ -4,6 +4,10 @@ on:
         model-name:
           required: true
           type: string
+        workflow-branch:
+          required: false
+          default: main
+          type: string
 
 jobs:
   create-and-annotate-sbml:
@@ -14,12 +18,13 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v4
+
       - name: Fetch SBML PBK workflow files
         uses: actions/checkout@v4
         with:
           repository: 'jwkruisselbrink/sbml-pbk-workflow'
           path: 'sbml-pbk-workflow'
-          ref: 'main'
+          ref: '${{inputs.workflow-branch}}'
   
       - name: Install Python
         uses: actions/setup-python@v5
