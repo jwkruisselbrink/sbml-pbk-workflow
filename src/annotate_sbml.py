@@ -1,8 +1,12 @@
 import sys
 import argparse
 import traceback
+import libsbml as ls
 from pathlib import Path
 from sbmlpbkutils import PbkModelAnnotator
+from sbmlutils.log import get_logger
+
+logger = get_logger(__name__)
 
 def main():
     parser = argparse.ArgumentParser(description="Annotate the SBML model file with the specifications of the annotations file.")
@@ -24,7 +28,8 @@ def main():
             annotations_file = f_ann
             out_file = f_out
             annotator = PbkModelAnnotator()
-            annotator.annotate(sbml_file, annotations_file, str(out_file))
+            document = annotator.annotate(sbml_file, annotations_file, logger)
+            ls.writeSBML(document, str(out_file))
         else:
             print(f'[{f_out}] already exists, use -f to force conversion')
     except Exception as e:

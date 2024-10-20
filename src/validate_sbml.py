@@ -2,6 +2,9 @@ import sys
 import argparse
 from pathlib import Path
 from sbmlpbkutils import PbkModelValidator
+from sbmlutils.log import get_logger
+
+logger = get_logger(__name__)
 
 def main (args):
     """usage: validateSBML.py inputfile
@@ -14,8 +17,8 @@ def main (args):
     if not f_in.is_file():
         raise FileNotFoundError(f'File {f_in} does not exist.')
 
-    validator = PbkModelValidator(True)
-    validator.validate(f_in)
+    validator = PbkModelValidator()
+    validator.validate(f_in, logger)
 
 if __name__ == '__main__':
   main(sys.argv) 
