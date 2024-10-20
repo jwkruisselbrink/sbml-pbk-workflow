@@ -1,6 +1,12 @@
 # SBML PBK workflow
 
-[GitHub workflow](https://docs.github.com/en/actions/using-workflows) for creation of annotated SBML files from Antimony PBK model implementations combined with annotations provided in CSV file annotations.
+[GitHub workflow](https://docs.github.com/en/actions/using-workflows) for creation of annotated SBML files from Antimony PBK model implementations combined with annotations provided in CSV file annotations. The workflow contains the following main build steps for creation and annotation of the SBML file:
+
+1. Create SBML file from Antimony model implementation.
+2. Annotate the SBML file with units and terms, based on the annotations CSV file.
+3. Validate the SBML file for completeness and consistency of units.
+4. Store the generated SBML file and log files in the build artifacts.
+5. Add the generated SBML file to the repository.
 
 ## Usage
 
@@ -18,7 +24,7 @@ on: [push, workflow_dispatch]
 
 jobs:
   create-and-annotate-sbml:
-    uses: jwkruisselbrink/sbml-pbk-workflow/.github/workflows/build.yml@main
+    uses: jwkruisselbrink/sbml-pbk-workflow/.github/workflows/build.yml@v2
     with:
       model-name: [MODEL_NAME]
     permissions:
@@ -26,15 +32,7 @@ jobs:
     secrets: inherit
 ```
 
-## Build steps of the workflow
-
-Besides some administrative steps, the workflow contains the following main build steps for creation and annotation of the SBML file. 
-
-1. Create SBML file from Antimony model implementation.
-2. Annotate the SBML file with units and terms, based on the annotations CSV file.
-3. Validate the SBML file for completeness and consistency of units.
-4. Store the generated SBML file and log files in the build artifacts.
-5. Add the generated SBML file to the repository.
+## Workflow build steps
 
 ### SBML conversion
 
@@ -60,7 +58,7 @@ For an example of an annotations file, see the [annotations file](https://github
 
 ### SBML validation
 
-Automatic validation can be included to check for model errors, model consistency, consitency of units, and also on more PBK-model specific aspects (such as mass balance). The script [validate_sbml.py](src/validate_sbml.py) runs validation checks on the SBML file. This is a first version in which some rudimentary file and consistency checks are performed. This first version is inspired by the [example](https://synonym.caltech.edu/software/libsbml/5.18.0/docs/formatted/python-api/validate_s_b_m_l_8py-example.html) presented in the libSBML documentation.
+Automatic validation can be included to check for model errors, model consistency, consitency of units, and also on more PBK-model specific aspects. The script [validate_sbml.py](src/validate_sbml.py) runs validation checks on the SBML file. This is a first version in which some rudimentary file and consistency checks are performed. This first version is inspired by the [example](https://synonym.caltech.edu/software/libsbml/5.18.0/docs/formatted/python-api/validate_s_b_m_l_8py-example.html) presented in the libSBML documentation.
 
 - Every compartment should have a BQM_IS annotation linking associating the compartment with a known compartment of the PBPK ontology.
 - Every parameter should have a BQM_IS annotation linking associating the compartment with a known parameter of the PBPK ontology.
