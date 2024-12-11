@@ -19,16 +19,33 @@ Adding the SBML PBK workflow to your GitHub repository requires the following st
 3. Create a file named 'build.yml' in the `.gihub/workflows` folder 
 
 ```yaml
-name: Create and annotate SBML
+name: Build
 on: [push, workflow_dispatch]
 
 jobs:
   create-and-annotate-sbml:
-    uses: jwkruisselbrink/sbml-pbk-workflow/.github/workflows/build.yml@v2
+    uses: jwkruisselbrink/sbml-pbk-workflow/.github/workflows/build.yml@v4
     with:
       model-name: [MODEL_NAME]
     permissions:
       contents: write
+    secrets: inherit
+```
+
+4. Optionally, you can also create a separate validate step (executed after successful run of the build workflow). To do so, create a file named 'validate.yml' in the `.gihub/workflows` folder 
+
+```yaml
+name: Validate
+on:
+  workflow_run:
+    workflows: ["Build"]
+    types: [completed]
+jobs:
+  validate-sbml:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    uses: jwkruisselbrink/sbml-pbk-workflow/.github/workflows/validate.yml@develop
+    with:
+      model-name: [MODEL_NAME]
     secrets: inherit
 ```
 
