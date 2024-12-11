@@ -44,7 +44,7 @@ jobs:
       - name: Create SBML
         id: create-sbml
         run: |
-          python sbml-pbk-workflow/src/ant2sbml.py -f model/${{inputs.model-name}}.ant
+          python sbml-pbk-workflow/src/ant2sbml.py model/${{inputs.model-name}}.ant -o model/${{inputs.model-name}}.sbml -f
         shell: bash
 
       - name: Annotate SBML
