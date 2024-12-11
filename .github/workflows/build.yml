@@ -50,7 +50,11 @@ jobs:
       - name: Annotate SBML
         id: annotate-sbml
         run: |
-          (python sbml-pbk-workflow/src/annotate_sbml.py -f model/${{inputs.model-name}}.sbml model/${{inputs.model-name}}.annotations.csv model/${{inputs.model-name}}.sbml) | tee log/annotate-terms.log
+          if [ -f CITATION.cff ]; then
+            (python sbml-pbk-workflow/src/annotate_sbml.py model/${{inputs.model-name}}.sbml model/${{inputs.model-name}}.annotations.csv model/${{inputs.model-name}}.sbml -c CITATION.cff -f) | tee log/annotate-terms.log
+          else
+            (python sbml-pbk-workflow/src/annotate_sbml.py model/${{inputs.model-name}}.sbml model/${{inputs.model-name}}.annotations.csv model/${{inputs.model-name}}.sbml -f) | tee log/annotate-terms.log
+          fi
         shell: bash
 
       - name: Validate SBML

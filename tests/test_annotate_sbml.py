@@ -12,5 +12,18 @@ class TestAnnotateSbml(TestBase):
         path = pl.Path('./tests/output/simple.annotated.sbml')
         self.assertIsFile(path)
 
+    @patch('sys.argv', [
+        'ant2sbml.py',
+        './tests/models/simple.sbml',
+        './tests/models/simple.annotations.csv',
+        './tests/output/simple.annotated.cff.sbml',
+        '-c', './tests/models/simple.CITATION.cff',
+        '-f'
+    ])
+    def test_simple_cff(self):
+        src.annotate_sbml.main()
+        path = pl.Path('./tests/output/simple.annotated.cff.sbml')
+        self.assertIsFile(path)
+
 if __name__ == '__main__':
     unittest.main()
