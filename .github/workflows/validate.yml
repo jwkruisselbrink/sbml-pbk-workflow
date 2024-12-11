@@ -1,0 +1,45 @@
+on:
+    workflow_call:
+      inputs:
+        model-name:
+          required: true
+          type: string
+        workflow-branch:
+          required: false
+          default: main
+          type: string
+
+jobs:
+  validate-sbml:
+    name: Validate SBML
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch SBML PBK workflow files
+        uses: actions/checkout@v4
+        with:
+          repository: 'jwkruisselbrink/sbml-pbk-workflow'
+          path: 'sbml-pbk-workflow'
+          ref: '${{inputs.workflow-branch}}'
+  
+      - name: Install Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install -r sbml-pbk-workflow/requirements.txt
+        shell: bash
+
+      - name: Create log file folder
+        id: create-log-file-folder
+        run: |
+          mkdir log
+        shell: bash
+
+      - name: Validate SBML
+        id: validate-sbml
+        run: (python sbml-pbk-workflow/src/validate_sbml.py model/${{inputs.model-name}}.sbml)
+        shell: bash
