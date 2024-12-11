@@ -6,7 +6,7 @@ from unittest.mock import patch
 
 class TestAnnotateSbml(TestBase):
 
-    @patch('sys.argv', ['ant2sbml.py', './tests/models/simple.sbml', './tests/models/simple.annotations.csv', './tests/output/simple.annotated.sbml'])
+    @patch('sys.argv', ['ant2sbml.py', './tests/models/simple.sbml', './tests/models/simple.annotations.csv', './tests/output/simple.annotated.sbml', '-f'])
     def test_simple(self):
         src.annotate_sbml.main()
         path = pl.Path('./tests/output/simple.annotated.sbml')

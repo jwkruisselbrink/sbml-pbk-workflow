@@ -6,7 +6,7 @@ from unittest.mock import patch
 
 class TestAnt2Sbml(TestBase):
 
-    @patch('sys.argv', ['ant2sbml.py', './tests/models/simple.ant', './tests/output/simple.sbml'])
+    @patch('sys.argv', ['ant2sbml.py', './tests/models/simple.ant', '-o', './tests/output/simple.sbml', '-f'])
     def test_simple(self):
         src.ant2sbml.main()
         path = pl.Path('./tests/output/simple.sbml')

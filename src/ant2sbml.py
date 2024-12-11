@@ -8,7 +8,7 @@ from pathlib import Path
 def main():
     parser = argparse.ArgumentParser(description="Convert Antimony file to SBML")
     parser.add_argument("ant_file", help="Full path to Antimony file")
-    parser.add_argument("out_file", help="Output file")
+    parser.add_argument("-o", "--output", type=str, help="Output file (optional)")
     parser.add_argument("-f", "--force", action="store_true", help="Overwrite existing")
     args = parser.parse_args()
     f_in = Path(args.ant_file)
@@ -22,7 +22,7 @@ def main():
         sys.exit(1)
 
     # Get output file from command line args, otherwise derive from antimony file
-    f_out = Path(args.out_file) if args.out_file is not None else Path(args.ant_file).with_suffix('.sbml')
+    f_out = Path(args.output) if args.output is not None else Path(args.ant_file).with_suffix('.sbml')
 
     # Check if output folder exists, otherwise create it
     out_dir = os.path.dirname(f_out)

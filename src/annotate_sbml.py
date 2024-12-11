@@ -1,3 +1,4 @@
+import os
 import sys
 import argparse
 import traceback
@@ -24,12 +25,18 @@ def main():
         raise FileNotFoundError(f'Annotations file [{f_ann}] does not exist.')
     try:
         if not f_out.exists() or args.force:
-            sbml_file = f_in
-            annotations_file = f_ann
-            out_file = f_out
+            
+            # Check if output folder exists, otherwise create it
+            out_dir = os.path.dirname(f_out)
+            if not os.path.exists(out_dir):
+                os.makedirs(out_dir)
+
+            # Annotate SBML file
             annotator = PbkModelAnnotator()
-            document = annotator.annotate(sbml_file, annotations_file, logger)
-            ls.writeSBML(document, str(out_file))
+            document = annotator.annotate(f_in, f_ann, logger)
+
+            # Write SBML
+            ls.writeSBML(document, str(f_out))
         else:
             print(f'[{f_out}] already exists, use -f to force conversion')
     except Exception as e:

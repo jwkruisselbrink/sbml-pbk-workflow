@@ -1,5 +1,6 @@
 import argparse
 import logging
+import os
 import sys
 from pathlib import Path
 from sbmlpbkutils import PbkModelValidator
@@ -26,7 +27,16 @@ def main():
     f_in = Path(args.f_in)
     if not f_in.is_file():
         raise FileNotFoundError(f'File {f_in} does not exist.')
-    logger = get_logger(__name__) if args.log_file is None else create_file_logger(Path(args.log_file))
+    if args.log_file is not None:
+        # Check if output folder exists, otherwise create it
+        out_dir = os.path.dirname(args.log_file)
+        if not os.path.exists(out_dir):
+            os.makedirs(out_dir)
+
+        # Create file logger
+        logger = create_file_logger(Path(args.log_file))
+    else:
+        logger = get_logger(__name__)
 
     validator = PbkModelValidator()
     validator.validate(f_in, logger)
