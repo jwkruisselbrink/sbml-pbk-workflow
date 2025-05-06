@@ -24,7 +24,7 @@ on: [push, workflow_dispatch]
 
 jobs:
   create-and-annotate-sbml:
-    uses: jwkruisselbrink/sbml-pbk-workflow/.github/workflows/build.yml@v7
+    uses: jwkruisselbrink/sbml-pbk-workflow/.github/workflows/build.yml@v8
     with:
       model-name: [MODEL_NAME]
     permissions:
@@ -43,7 +43,7 @@ on:
 jobs:
   validate-sbml:
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
-    uses: jwkruisselbrink/sbml-pbk-workflow/.github/workflows/validate.yml@v7
+    uses: jwkruisselbrink/sbml-pbk-workflow/.github/workflows/validate.yml@v8
     with:
       model-name: [MODEL_NAME]
     secrets: inherit
