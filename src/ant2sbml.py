@@ -31,7 +31,7 @@ def main():
 
     # Export to SBML file
     if not f_out.exists() or args.force:
-        r.exportToSBML(f_out)
+        r.exportToSBML(f_out, current=False)
         print(f'{f_in} converted to {f_out}')
     else:
         print(f'{f_out} exists, use -f to force conversion')
